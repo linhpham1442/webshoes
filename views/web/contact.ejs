@@ -1,0 +1,86 @@
+ <!---->
+ <body>
+
+    <!-- mian-content -->
+    <div class="main-banner inner" id="home">
+        <!-- header -->
+        <header class="header">
+            <div class="container-fluid px-lg-5">
+                <!-- nav -->
+                <nav class="py-4">
+                    <div id="logo">
+                        <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                        </a>
+                    </h1>
+                </div>
+
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu mt-2">
+                    <li class="active"><a href="/">Trang chủ</a></li>
+                    <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                        <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul>
+                            <%data.cates.forEach(function(cate){%>
+                                <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
+                            <%})%>  
+                        </ul>
+                    </li>
+                    <li><a href="/about">Giới thiệu</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
+                    <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+        <!-- //header -->
+
+    </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Trang chủ</a>
+        </li>
+        <li class="breadcrumb-item active">Liên hệ</li>
+    </ol>
+    <!---->
+    <!--// mian-content -->
+    <!-- banner -->
+    <section class="ab-info-main py-5">
+        <div class="container py-3">
+            <h3 class="tittle text-center"><span class="sub-tittle">TÌM TỤI TUI Ở ĐÂU ?</span>XEM Ở DƯỚI NHA</h3>
+            <div class="row contact-main-info mt-5">
+                <div class="col-md-7 contact-right-content">
+                    <h4 class="mb-2">Google Map</h4>
+                    <iframe width="500px" height="500px" id="gmap_canvas" src="https://maps.google.com/maps?q=Khu%20ph%E1%BB%91%206%2C%20P.Linh%20Trung%2C%20Q.Th%E1%BB%A7%20%C4%90%E1%BB%A9c%2C%20TP.H%E1%BB%93%20Ch%C3%AD%20Minh.&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+                <div class="col-md-5 contact-left-content">
+                    <h4 class="mb-2">Thông tin liên lạc</h4>
+                    <div class="address-con">
+                        <h4 class="mb-2"><span class="fa fa-phone-square" aria-hidden="true"></span> Điện thoại</h4>
+                        <p>0987654321</p>
+                    </div>
+                    <div class="address-con my-4">
+                        <h4 class="mb-2"><span class="fa fa-envelope-o" aria-hidden="true"></span> Email </h4>
+                        <p><a href="mailto:info@example.com">UIT@gmail.com</a></p>
+                    </div>
+                    <div class="address-con mb-4">
+                        <h4 class="mb-2"><span class="fa fa-fax" aria-hidden="true"></span> Fax</h4>
+                        <p>(800) 99999999</p>
+                    </div>
+                    <div class="address-con">
+                        <h4 class="mb-2"><span class="fa fa-map-marker" aria-hidden="true"></span> Địa chỉ </h4>
+
+                        <p>University Information Technogy</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+

@@ -1,0 +1,38 @@
+
+  <div class="container-fluid">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Categories List</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Decription</th>
+                      <th style="width: 20%;">Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Decription</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <%data.forEach(function(item){%>
+                      <tr>
+                        <td><%=item.name%></td>
+                        <td><%= item.description%></td>
+                        <td>
+                              <a href="/admin/cate/edit/<%=item._id%>" class="alert alert-primary">Edit</a>
+                              <a href="/admin/cate/delete/<%=item._id%>" class="alert alert-danger">Delete</a>
+                        </td>
+                      </tr>
+                      <%})%>
+                  </tbody>
+                </table>
+            </div>
+        </div>

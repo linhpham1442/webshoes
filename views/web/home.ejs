@@ -1,0 +1,243 @@
+<body>
+
+    <!-- mian-content -->
+    <div class="main-banner" id="home">
+        <!-- header -->
+        <header class="header">
+            <div class="container-fluid px-lg-5">
+                <!-- nav -->
+                <nav class="py-4">
+                    <div id="logo">
+                        <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                            </a>
+                        </h1>
+                    </div>
+
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop" />
+                    <ul class="menu mt-2">
+                        <li class="active"><a href="/">Trang chủ</a></li>
+                        <li>
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                            <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-2" />
+                            <ul>
+                                <%data.cates.forEach(function(cate){%>
+                                    <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
+                                <%})%>  
+                            </ul>
+                        </li>
+                        <li><a href="/about">Giới thiệu</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Liên hệ</a></li>
+                        <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                    </ul>
+                </nav>
+                <!-- //nav -->
+            </div>
+        </header>
+    
+        <!-- //header -->
+        <!--/banner-->
+        <div class="banner-info">
+            <H6>Xu hướng giày của tuần</H6>
+            <h3 class="mb-4">NIKE®	BRAND</h3>
+        </div>
+        <!--// banner-inner -->
+
+    </div>
+    <!--//main-content-->
+    <!--/ab -->
+    <section class="about py-md-5 py-5">
+        <div class="container-fluid">
+            <div class="feature-grids row px-3">
+                <div class="col-lg-3 gd-bottom">
+                    <div class="bottom-gd row">
+                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-truck" aria-hidden="true"></span></div>
+                        <div class="icon-gd-info col-md-9">
+                            <h3 class="mb-2">FREE SHIPPING</h3>
+                            <p>Với mỗi hóa đơn trên 2000000 VND</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 gd-bottom">
+                    <div class="bottom-gd row bottom-gd2-active">
+                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-bullhorn" aria-hidden="true"></span></div>
+                        <div class="icon-gd-info col-md-9">
+                            <h3 class="mb-2">ĐỔI TRẢ HÀNG MIỄN PHÍ</h3>
+                            <p>30 ngày kể từ ngày đầu tiên nhận sản phẩm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 gd-bottom">
+                    <div class="bottom-gd row">
+                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-gift" aria-hidden="true"></span></div>
+
+                        <div class="icon-gd-info col-md-9">
+                            <h3 class="mb-2">KHÁCH HÀNG THÀNH VIÊN</h3>
+                            <p>Đăng kí thành viên và nhận ưu đãi giảm giá lên đến 30%</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 gd-bottom">
+                    <div class="bottom-gd row">
+                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-usd" aria-hidden="true"></span></div>
+                        <div class="icon-gd-info col-md-9">
+                            <h3 class="mb-2">HỖ TRỢ NHIỆT TÌNH</h3>
+                            <p>Hỗ trợ khách hàng 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hand-crafted py-5">
+        <div class="container py-md-3">
+            <div class="row banner-grids">
+                <div class="col-md-6 banner-image">
+                    <div class="effect-w3">
+                        <img src="assets/web/images/home-discount.jpg" alt="" class="img-fluid image1">
+    
+                    </div>
+    
+                </div>
+                <div class="col-md-6 last-img pl-lg-5 p-3">
+                    <h3 class="tittle mb-lg-5 mb-3"><span class="sub-tittle">HẾT MƯA RỒI, MANG GIÀY DA RA ĐƯỜNG THÔI </span>GIẢM GIÁ LÊN ĐẾN 50% CÁC SẢN PHẨM GIÀY DA</h3>
+                    <p class="mb-4">Từ ngày 31/5 đến ngày 30/6/2021, một số sản phẩm thuộc dòng Leather Shoes (trừ các dòng Top Product và Popular Product) sẽ được giảm giá lên đến 50%. Số lượng giày khuyến mãi có hạn.</p>
+                    <ul class="tic-info list-unstyled">
+                        <li>
+    
+                            <span class="fa fa-check mr-2"></span> Chất lượng giày khuyến mãi được đảm bảo
+    
+                        </li>
+                        <li>
+    
+                            <span class="fa fa-check mr-2"></span> Được kiểm tra hàng trước khi thanh toán
+    
+                        </li>
+                        <li>
+    
+                            <span class="fa fa-check mr-2"></span> Mỗi khách hàng chỉ được áp dụng tối đa 3 sản phẩm trong suốt chương trình khuyến mãi.
+                        </li>
+                        <li>
+    
+                            <span class="fa fa-check mr-2"></span> Không áp dụng các chương trình khuyến mãi khác.
+    
+                        </li>
+                    </ul>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //ab -->
+    <!--/ab -->
+    <section class="about py-5">
+        <div class="container pb-lg-3">
+            <h3 class="tittle text-center">TOP SELLERS</h3>
+            <div class="row">
+                <%data.topProduct.forEach(function(top){%>
+                    <div class="col-md-4 product-men">
+                        <a href="/product/<%=top.slug%>">
+                            <div class="product-shoe-info shoe text-center">
+                                <div class="men-thumb-item">
+                                    <img src="data:<%=top.image.contentType%>;base64,<%=top.image.data%>" class="" alt="" width="300px" height="300px">
+                                    <span class="product-new-top">Top</span>
+                                </div>
+                                <div class="item-info-product">
+                                    <h4>
+                                        <a href="/product/<%=top.slug%>"><%=top.name%></a>
+                                    </h4>
+        
+                                    <div class="product_price">
+                                        <div class="grid-price">
+                                            <span class="money"><%=top.price%> VND</span>
+                                        </div>
+                                    </div>
+                                    <div class="addToCard"> 
+                                        <a href="/addToCart/<%=top.slug%>">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <%})%>
+            </div>
+
+        </div>
+    </section>
+    <!-- //ab -->
+    <!--/testimonials-->
+    <section class="testimonials py-5">
+        <div class="container">
+            <div class="test-info text-center">
+                <h3 class="my-md-2 my-3">Trần Huy Thắng</h3>
+                <p><span class="fa fa-quote-left"></span>Là một Sneakerholic lâu năm, tôi thật sự tin tưởng khi chọn mua sản phẩm tại Tiệm Giày Mới. Nơi đây chính là ngọn đuốc thắp lửa cho niềm đam mê sneakers của tôi, là những con người đã đóng góp rất nhiều vào bộ sưu tập sneakers đồ sộ mà bạn thường thấy trên các Youtube Sneakers Vlog của tôi. Bạn muốn có một đôi giày mà bạn mơ ước từ lâu, hay đơn giản là chỉ thấy thoáng qua ở đâu đó ? Hãy bước đến với Tiệm Giày Mới, đôi giày sẽ hiện hữu trước mắt bạn.<span class="fa fa-quote-right"></span></p>
+
+            </div>
+        </div>
+    </section>
+    <section class="about py-5">
+        <div class="container pb-lg-3">
+            <h3 class="tittle text-center">SẢN PHẨM NỔI BẬT</h3>
+            <div class="row">
+                <%data.popularProduct.forEach(function(popular){%>
+                    <div class="col-md-4 product-men">
+                        <a href="/product/<%=popular.slug%>">
+                            <div class="product-shoe-info shoe text-center">
+                                <div class="men-thumb-item">
+                                    <img src="data:<%=popular.image.contentType%>;base64,<%=popular.image.data%>" class="" alt="" width="300px" height="300px">
+                                    <span class="product-new-top">Popular</span>
+                                </div>
+                                <div class="item-info-product">
+                                    <h4>
+                                        <a href="/product/<%=popular.slug%>"><%=popular.name%></a>
+                                    </h4>
+        
+                                    <div class="product_price">
+                                        <div class="grid-price">
+                                            <span class="money"><%=popular.price%> VND</span>
+                                        </div>
+                                    </div>
+                                    <div class="addToCard"> 
+                                        <a href="/addToCart/<%=popular.slug%>">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <%})%>
+            </div>
+        </div>
+    </section>
+    <!-- //ab -->
+    <!-- brands -->
+    <section class="brands py-5" id="brands">
+        <div class="container py-lg-0">
+            <div class="row text-center brand-items">
+                <div class="col-sm-2 col-3">
+                    <a href="#"><span class="fa fa-connectdevelop" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-sm-2 col-3">
+                    <a href="#"><span class="fa fa-empire" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-sm-2 col-3">
+                    <a href="#"><span class="fa fa-ioxhost" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-sm-2 col-3">
+                    <a href="#"><span class="fa fa-first-order" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-sm-2 col-3 mt-sm-0 mt-4">
+                    <a href="#"><span class="fa fa-joomla" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-sm-2 col-3 mt-sm-0 mt-4">
+                    <a href="#"><span class="fa fa-dropbox" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- brands -->
+    <!-- footer --></div>

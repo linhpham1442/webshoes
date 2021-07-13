@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Edit Products</h6>
+        </div>
+        <%-include("../partials/message")%>
+        <div class="col-12">
+            <form action="/admin/product/edit/<%=data._id%>" class="formReg" method="POST" enctype="multipart/form-data" >
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Input name product" class="form-control" id="name" name="name" value ="<%=(typeof(data)=='undefined') ? '' :data.name%>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Category select</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="category">
+                        <% cate.forEach(function(item){%>
+                            <%if(data.cateId == item.slug){%>
+                                <option value="<%=item.slug%>" selected><%=item.name%></option>
+                            <%}else{%>
+                                <option value="<%=item.slug%>" ><%=item.name%></option>
+                            <%}%>
+                        <%})%>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" placeholder="Your price product.." class="form-control" id="price" name="price" value ="<%=(typeof(data)=='undefined') ? '' :data.price%>">
+                </div>
+                <div class="form-group">
+                    <label for="sale">Sale</label>
+                    <input type="number" placeholder="Your Sale Price.." class="form-control" id="sale" name="sale" value ="<%=(typeof(data)=='undefined') ? '' :data.sale%>">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" placeholder="Your Description.." class="form-control" id="description" name="description" value ="<%=(typeof(data)=='undefined') ? '' :data.description%>">
+                </div>
+                <div class="form-group">
+                    <label for="iamge">Image</label>
+                    <input type="file" class="form-control" name="image" id="image">
+                </div>
+                <div class="row mb-3 pl-3">
+                    <div class="form-check col-6">
+                        <input class="form-check-input" type="checkbox" value="popular" id="flexCheckChecked" name="popular" <%=(typeof(data)!='undefined'&&data.popular)?'checked':''%>>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Popular Product
+                        </label>
+                      </div>
+                      <div class="form-check col-6">
+                        <input class="form-check-input" type="checkbox" value="top" id="topChecked" name="top"<%=(typeof(data)!='undefined'&&data.top)?'checked':''%>>
+                        <label class="form-check-label" for="topChecked">
+                          Top Product
+                        </label>
+                      </div>
+                </div>
+                <button type="submit" class="btn btn-primary  btn-user btn-block mt-2">Lưu</button>
+            </form>
+        </div>
+    </div>
+</div>

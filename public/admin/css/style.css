@@ -1,0 +1,37 @@
+form{
+    margin: 20px 7%;
+}
+.info-user{
+    border-radius: 5px;
+    color:black
+}
+.notfound{
+    height: 750px;
+    text-align: center;
+    padding-top: 15%;
+    color: rgb(45, 128, 100);
+}
+.notfound h1{
+    font-size: 100px;
+    color: rgb(230, 76, 76);
+}
+.notfound a{
+    text-decoration: none;
+}
+.bg-gradient-primary{
+    background-color: #0d0808;
+    background-image: none;
+}
+.btn-primary{
+    background-color: #0d0808;
+    border: #0d0808;
+}
+.text-primary{
+    color: #0d0808  !important;
+}
+.page-item.active .page-link{
+    background-color: #0d0808;
+}
+.dropdown-header{
+    background-color: #0d0808 !important;
+}

@@ -1,0 +1,57 @@
+
+  <div class="container-fluid">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Products List</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Sale Price</th>
+                      <th>Image</th>
+                      <th>Decription</th>
+                      <th style="width: 20%;">Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Sale Price</th>
+                      <th>Image</th>
+                      <th>Decription</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <%data.forEach(function(item){%>
+                      <tr>
+                        <td><%= item.name%></td>
+                        <td>
+                          <%cate.forEach(function(cate){%>
+                              <%if(cate.slug == item.cateId){%>
+                                  <%=cate.name%>
+                              <%}%>
+                          <%})%>
+                      </td>
+                        <td><%= item.price%></td>
+                        <td><%= item.sale%></td>
+                        <td><img src="data:<%=item.image.contentType%>;base64,<%=item.image.data%>" height="64px" width="64px">  </td>
+                        <td><%= item.description%></td>
+                        <td>
+                              <a href="/admin/product/edit/<%=item._id%>" class="alert alert-primary">Edit</a>
+                              <a href="/admin/product/delete/<%=item._id%>" class="alert alert-danger">Delete</a>
+                        </td>
+                      </tr>
+                    <%})%>
+                   
+                  </tbody>
+                </table>
+            </div>
+        </div>

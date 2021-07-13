@@ -1,0 +1,113 @@
+<body>
+
+    <!-- mian-content -->
+    <div class="main-banner inner" id="home">
+        <!-- header -->
+        <header class="header">
+            <div class="container-fluid px-lg-5">
+                <!-- nav -->
+                <nav class="py-4">
+                    <div id="logo">
+                        <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                        </a>
+                    </h1>
+                </div>
+
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu mt-2">
+                    <li class="active"><a href="/">Trang chủ</a></li>
+                    <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                        <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul>
+                            <%data.cates.forEach(function(cate){%>
+                                <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
+                            <%})%>  
+                        </ul>
+                    </li>
+                    <li><a href="/about">Giới thiệu</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
+                    <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+        <!-- //header -->
+
+    </div>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="index.html">Trang chủ</a>
+    </li>
+    <li class="breadcrumb-item active">Giới thiệu</li>
+</ol>
+<!---->
+<!--// mian-content -->
+<!--/ab -->
+<section class="hand-crafted py-5">
+    <div class="container">
+        <div class="inner-sec py-md-5 px-lg-5">
+            <h3 class="tittle text-center"><span class="sub-tittle">VỀ CHÚNG TÔI</span> Chào mừng các bạn đến với "Tiệm Giày Mới"</h3>
+            <p class="mb-4 text-center px-lg-4">Tiệm Giày Mới được thành lập từ năm 2010. Từ những ngày đầu tiên, cửa hàng của Tiệm chỉ là ngôi nhà nhỏ và những con người với niềm đam mê lớn. Giờ đây, Tiệm đã có trên 30 cửa hàng tọa lạc khắp các quận huyện ở TPHCM. Với gần 11 năm kinh nghiệm, cùng với uy tín và sự đam mê mãnh liệt với những đôi giày của chúng tôi, Tiệm Giày Mới cam đoan sẽ gửi đến bạn những đôi giày mới nhất, đẹp nhất mà không phải lo lắng về hàng nhái hay kém chất lượng. Rất mong mọi người sẽ ủng hộ cho Tiệm Giày Mới, để chúng tôi có thể giữ lửa, cũng như truyền tải niềm đam mê giày đến với mọi người, để cộng đồng Sneakerholics càng lớn mạnh hơn.</p>
+        </div>
+    </div>
+</section>
+<!-- //ab -->
+<!--/ab -->
+<section class="about py-md-5 py-5">
+    <div class="container py-md-3">
+        <h3 class="tittle text-center">MUA HÀNG Ở ĐÂY, BẠN ĐƯỢC GÌ ?</h3>
+        <div class="feature-grids row">
+            <div class="col-md-4 gd-bottom mt-lg-4">
+                <div class="bottom-gd p-lg-5 p-4">
+                    <span class="fa fa-truck" aria-hidden="true"></span>
+                    <h3 class="my-3">
+                        MẤY ANH SHIPPER VUI TÁNH</h3>
+                    <p>Những chàng shipper vui vẻ mang giày đến bạn khắp hang cùng ngõ hẹp, vui vẻ chờ bạn nhận hàng không quản nắng mưa (nhớ lấy trong vòng 10 phút nha, tội mấy anh :(( ), vui vẻ nói chuyện đủ loại chủ đề với bạn ( nếu họ rảnh :)) ), vui vẻ kiểm tra lại đơn hàng và không quên nói lời cảm ơn khi bạn đã nhận hàng thành công.</p>
+                </div>
+            </div>
+            <div class="col-md-4 gd-bottom mt-lg-4">
+                <div class="bottom-gd2-active p-lg-5 p-4">
+                    <span class="fa fa-bullhorn" aria-hidden="true"></span>
+                    <h3 class="my-3">MẤY CHỊ TƯ VẤN NHIỆT TÌNH</h3>
+                    <p>"Dàn hậu cung" của bổn Tiệm sẽ luôn phục vụ các bạn chu đáo, dù bạn đến mua hay chỉ "xem cho dui". Gặp được họ, bạn sẽ không cần lo giày đi không vừa, hay nó sẽ dìm nhan sắc của bạn xuống vực sâu, vì các bạn nhân viên tư vấn sẽ hỗ trợ thật nhiệt tình và vui vẻ, mang đến cho bạn một đôi giày phù hợp nhất để ướm thật chặt vào đôi chân của mình. Mấy bạn nhân viên tư vấn ai nấy cũng xinh đẹp nữa, nên nếu lỡ bạn thất vọng vì không ngắm thấy giày nào đẹp thì quay sang ngắm họ cũng được :))</p>
+                </div>
+            </div>
+            <div class="col-md-4 gd-bottom mt-lg-4">
+                <div class="bottom-gd p-lg-5 p-4">
+                    <span class="fa fa-gift" aria-hidden="true"></span>
+                    <h3 class="my-3">QUÀ TẶNG, KHUYẾN MÃI NGẬP MẶT</h3>
+                    <p>Cô bán trà đá trước Tiệm hay nói với khách :"Đi mua giày ở đây, thí dụ giày giá 2 củ thì cầm 1 củ theo là mua được rồi, mà nhớ thuê thêm xe tải chở quà về nữa nhaaaa !". Vâng, Tiệm sẽ mở rất nhiều chương trình ưu đãi giảm giá 10,20 hay tận 50% , cũng như nhiều chương trình tặng quà như thú bông, móc khóa, thậm chí cả giày xịn hơn đôi bạn vừa mua. Nhưng nhớ nhanh tay nhanh chân lên, vì số lượng khuyến mãi có hạn nhé. </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- //ab -->
+<!-- /hand-crafted -->
+<section class="hand-crafted py-5">
+    <div class="container py-md-3">
+        <div class="row banner-grids">
+            <div class="col-md-6 banner-image">
+                <div class="effect-w3">
+                    <img src="assets/web/images/about.jpg" alt="" class="img-fluid image1">
+
+                </div>
+
+            </div>
+            <div class="col-md-6 last-img pl-lg-5 p-3">
+                <h3 class="tittle mb-lg-5 mb-3"><span class="sub-tittle">AI CŨNG NÊN CÓ MỘT ĐÔI GIÀY ĐẸP </span>BẠN CŨNG VẬY</h3>
+                <p class="mb-4">Một set outfit đẹp không thể nào thiếu sự góp công của một đôi giày đẹp. Chúng không chỉ là vật dụng bảo vệ đôi chân, mà chúng chất chứa trong nó mỗi nét đẹp, đặc sắc khác nhau giữa những đôi giày khác nhau. Bạn bảo tôi cool, ngầu, đúng chứ ? Tôi được như vậy một phần cũng là nhờ đôi giày mà tôi hay mang, như đôi Air Jordan 1 High Tie Dye tôi đang cầm đây. Hãy sắm cho mình một đôi giày đẹp, và bạn sẽ thấy nó nâng tầm bạn như thế nào. -Low G </p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //hand-crafted -->
+<!-- stats -->

@@ -1,0 +1,12 @@
+const express = require('express');
+const Route = express.Router();
+const {homeController,cartController} = require('../../controllers/web/index');
+Route.route('/').get(homeController.home);
+Route.route('/about').get(homeController.about);
+Route.route('/contact').get(homeController.contact);
+Route.route('/blog').get(homeController.blog);
+Route.route('/shop/:slug').get(homeController.shop);
+Route.route('/product/:slug').get(homeController.single);
+Route.route('/addToCart/:slug').get(cartController.addToCart);
+Route.route('/cart').get(cartController.getCart).post(cartController.postCart);
+module.exports = Route;

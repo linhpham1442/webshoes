@@ -1,0 +1,67 @@
+
+  <div class="container-fluid">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Detail Invoice</h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+            <h4>Products :</h4>
+          <table class="table table-bordered" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <%data.cart.infoProduct.forEach(function(item){%>
+                <tr>
+                  <td><%= item.name%></td>
+                  <td><%= item.price%></td>
+                  <td><%= item.qty%></td>
+                  <td><%= item.total%></td>
+                </tr>
+                <%})%>
+            </tbody>
+          </table>
+                <div class="table-responsive">
+                    <h4>Infomation Contact :</h4>
+                  <table class="table table-bordered"  width="80%"cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td><%= data.cart.infoCustomer.name%></td>
+                          <td><%= data.cart.infoCustomer.email%></td>
+                          <td><%= data.cart.infoCustomer.phone%></td>
+                          <td><%= data.cart.infoCustomer.address%></td>
+                          <td><%= data.cart.infoCustomer.note%></td>
+
+                        </tr>
+                    </tbody>
+                  </table>
+              </div>
+             
+          <div class="col col-3" style="float: right; color: red;">
+            <h4>Total: <%= data.cart.total%> <span>VND</span></h4>
+        </div>
+      </div>
+  </div>

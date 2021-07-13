@@ -1,0 +1,137 @@
+  <!---->
+  <body>
+
+    <!-- mian-content -->
+    <div class="main-banner inner" id="home">
+        <!-- header -->
+        <header class="header">
+            <div class="container-fluid px-lg-5">
+                <!-- nav -->
+                <nav class="py-4">
+                    <div id="logo">
+                        <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                        </a>
+                    </h1>
+                </div>
+
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu mt-2">
+                    <li class="active"><a href="/">Trang chủ</a></li>
+                    <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                        <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul>
+                            <%data.cates.forEach(function(cate){%>
+                                <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
+                            <%})%>  
+                        </ul>
+                    </li>
+                    <li><a href="/about">Giới thiệu</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
+                    <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+        <!-- //header -->
+
+    </div>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="index.html">Trang chủ</a>
+    </li>
+    <li class="breadcrumb-item active">Blog</li>
+</ol>
+<!---->
+<!--// mian-content -->
+<!-- banner -->
+<section class="ab-info-main py-5">
+    <div class="container py-lg-3">
+        <div class="ab-info-grids">
+            <h3 class="tittle text-center mb-lg-5 mb-3">Bài viết</h3>
+            <div id="products" class="row view-group">
+     
+                    <div class="item col-lg-4">
+                        <div class="thumbnail card">
+                            <div class="img-event">
+                                <img class="group list-group-image" src="assets/web/images/nike.jpg" alt="" width="350px" height="250px" />
+                            </div>
+                            <div class="caption card-body">
+                                <h4 class="group card-title inner list-group-item-heading">
+                                    CÁCH PHỐI GIÀY NIKE</h4>
+                                <p class="group inner list-group-item-text">
+                                    Những đôi giày sneaker còn được nhiều người gọi là những đôi giày thể thao, chúng mang nhiều thương hiệu khác nhau với các nét độc đáo và cách thiết kế riêng của từng hãng để mang lại cho chủ sở hữu một phong cách năng động, trẻ trung. Chắc hẳn bạn đã từng nghe đến thương hiệu giày thể thao nike mang phong cách trẻ trung, hiện đại và dễ dàng kết hợp với nhiều set đồ khác nhau. Hôm nay Tiệm Giày Mới xin giới thiệu cho bạn những cách phối đồ với giày thể thao nike sao cho phù hợp.</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="lead">
+                                            fsport247</p>
+                                    </div>
+                                    <div class="col-6 ban-buttons">
+                                        <a class="btn btn-course" href="https://fsport247.com/tin-tuc/cach-phoi-do-voi-giay-the-thao-nike-1838.html">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="item col-lg-4">
+                        <div class="thumbnail card">
+                            <div class="img-event">
+                                <img class="group list-group-image" src="assets/web/images/converse.jpg" alt="" width="350px" height="250px" />
+                            </div>
+                            <div class="caption card-body">
+                                <h4 class="group card-title inner list-group-item-heading">
+                                    CÁCH PHỐI GIÀY CONVERSE</h4>
+                                <p class="group inner list-group-item-text">
+                                    Converse là cái tên quen thuộc của các tín đồ cuồng giày tại Việt Nam. Mặc dù cách phối đồ với giày converse đã được áp dụng phổ biến, nhưng để phối hợp chúng cho thật phong cách cũng không hề dễ dàng.
+Chỉ với một vài gợi ý trong “Tổng Hợp 10 Cách Phối Đồ Với Giày Converse Nam Nữ Cực Chất”, Tiệm Giày Mới sẽ giúp bạn sẽ càng thêm tự tin khi xuống phố.</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="lead">
+                                            BUMSHOP</p>
+                                    </div>
+                                    <div class="col-6 ban-buttons">
+                                        <a class="btn btn-course" href="https://bumshop.com.vn/phoi-do-voi-giay-converse/">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="item col-lg-4">
+                        <div class="thumbnail card">
+                            <div class="img-event">
+                                <img class="group list-group-image" src="assets/web/images/adidas.jpg" alt="" width="350px" height="250px" />
+                            </div>
+                            <div class="caption card-body">
+                                <h4 class="group card-title inner list-group-item-heading">
+                                    CÁCH PHỐI GIÀY ADIDAS</h4>
+                                <p class="group inner list-group-item-text">
+                                    Superstar là một trong những dòng giày thời trang lâu đời và nổi tiếng nhất của Adidas. Có thể dễ dàng kết hợp cùng nhiều phong cách trang phục khác nhau, Adidas Superstar cho đến nay vẫn chưa hề hạ nhiệt và vẫn là sự lựa chọn hàng đầu trong tủ giày của các bạn trẻ. 
+Tiệm Giày Mới sẽ giúp bạn khám phá những bí kíp phối đồ ấn tượng nhất với Superstar trong bài viết này.</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="lead">
+                                            MyShoes</p>
+                                    </div>
+                                    <div class="col-6 ban-buttons">
+                                        <a class="btn btn-course" href="https://myshoes.vn/cach-phoi-do-voi-giay-adidas-superstar">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //banner -->

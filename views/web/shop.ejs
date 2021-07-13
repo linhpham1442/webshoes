@@ -1,0 +1,139 @@
+<div class="main-banner inner" id="home">
+    <!-- header -->
+    <header class="header">
+        <div class="container-fluid px-lg-5">
+            <!-- nav -->
+            <nav class="py-4">
+                <div id="logo">
+                    <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                    </a>
+                </h1>
+            </div>
+
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu mt-2">
+                <li class="active"><a href="/">Trang chủ</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                    <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <input type="checkbox" id="drop-2" />
+                    <ul>
+                        <%data.cates.forEach(function(cate){%>
+                            <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
+                        <%})%>  
+                    </ul>
+                </li>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+                <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+</div>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="/">Trang chủ</a>
+    </li>
+    <%data.cates.forEach(function(cate){%>
+    <li class="breadcrumb-item active">
+        <a href="/shop/<%=cate.slug%>" style="color:black">
+        <span>
+            <%=cate.name%>
+        </span>
+    </a></li>
+    <%})%>
+</ol>
+<!---->
+<!-- banner -->
+<section class="ab-info-main py-md-5 py-4">
+    <div class="container py-md-3">
+        <!-- top Products -->
+        <div class="row">
+            <!-- product left -->
+            <div class="side-bar col-lg-4">
+
+                <div class="search-bar w3layouts-newsletter">
+                    <h3 class="sear-head">Tìm kiếm sản phẩm</h3>
+                    <form action="#" method="post" class="d-flex">
+                        <input type="search" placeholder="Tên sản phẩm..." name="search" class="form-control" required="">
+                        <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
+                    </form>
+                </div>
+                <!-- discounts -->
+                <div class="left-side mt-4">
+                    <h3 class="sear-head">Danh mục giày </h3>
+                    <ul class="w3layouts-box-list">
+                        <li>
+                            <%data.cates.forEach(function(cate){%>
+                                <li>
+                                    <a href="/shop/<%=cate.slug%>" style="color:black">
+                                        <span>
+                                            <%=cate.name%>
+                                        </span>
+                                    </a>
+                                </li>
+                            <%})%>
+                        </li>
+                    </ul>
+                </div>
+                <div class="deal-leftmk left-side">
+                    <h3 class="sear-head">Phổ biến</h3>
+                    <%data.popularProduct.forEach(function(popular){%>
+                        <div class="special-sec1 row mt-2">
+                            <a href="/product/<%=popular.slug%>">
+                                <div class="img-deals col-md-4">
+                                    <img src="data:<%=popular.image.contentType%>;base64,<%=popular.image.data%>"  alt="" width="120px" height="70px" >
+                                </div>
+                                <div class="img-deal1 col-md-4">
+                                    <h3><%= popular.name%></h3>
+                                    <a href="/product/<%=popular.slug%>"><%= popular.price%> VND</a>
+                                </div>
+                            </a>
+                        </div>
+                    <%})%>
+                </div>
+                <!-- //deals -->
+
+            </div>
+            <!-- //product left -->
+            <!-- product right -->
+            <div class="left-ads-display col-lg-8">
+                <div class="row">
+                    <%data.products.forEach(function(item){%>
+                        <div class="col-md-4 product-men mt-4">
+                            <div class="product-shoe-info shoe text-center">
+                                <div class="men-thumb-item">
+                                    <img src="data:<%=item.image.contentType%>;base64,<%=item.image.data%>" class="" alt="" width='191.33px' height="191.33px" >
+                                </div>
+                                <div class="item-info-product">
+                                    <h4>
+                                        <a href="/product/<%=item.slug%>"><%=item.name%></a>
+                                    </h4>
+    
+                                    <div class="product_price">
+                                        <div class="grid-price">
+                                            <span class="money"><%=item.price%> VND</span>
+                                        </div>
+                                    </div>
+                                    <div class="addToCard"> 
+                                        <a href="/product/<%=item.slug%>">Xem chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <%})%>
+                </div>
+                <div class="grid-img-right mt-4 text-right">
+                    <span class="money">Vẫn khó lựa chọn nhỉ ?</span>
+                    <a href="/blog" class="btn">Qua đây nghiên cứu thử xem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
