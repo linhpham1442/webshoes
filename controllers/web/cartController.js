@@ -14,6 +14,7 @@ let addToCart = async(req, res) => {
             name: product.name,
             slug: product.slug,
             price: product.price,
+            image: product.image,
             qty: 1,
             total: product.price * 1
         })
@@ -40,7 +41,7 @@ let addToCart = async(req, res) => {
         }
     }
     req.flash('success', 'Thêm vào giỏ thành công');
-    return res.redirect('back');
+    return res.redirect('/checkout');
 }
 let getCart = async(req, res) => {
     try {
@@ -58,7 +59,7 @@ let getCart = async(req, res) => {
         }
         let cates = await cateModel.find();
         return res.render('web/layout/master', {
-            content: cartPage.cart,
+            content: cartPage.checkout,
             data: {
                 cart: cart,
                 cates: cates,
@@ -74,6 +75,60 @@ let getCart = async(req, res) => {
         })
     }
 }
+
+let getUpdateQty = async(req, res) => {
+    try {
+        if (req.session.cart == undefined) {
+            lengthCart = 0;
+        } else {
+            lengthCart = req.session.cart.length;
+        };
+        let slug = req.params.slug;
+        let cart = req.session.cart;
+        // let total = 0;
+        // if (cart != undefined) {
+        //     for (let i = 0; i < cart.length; i++) {
+        //         total += cart[i].total;
+        //     }
+        // }
+        let cates = await cateModel.find();
+
+        let action = req.query.action;
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].slug == slug) {
+                switch (action) {
+                    case "add":
+                        cart[i].qty++;
+                        cart[i].total = cart[i].price * cart[i].qty;
+                        break;
+                    case "remove":
+                        cart[i].qty--;
+                        cart[i].total = cart[i].price * cart[i].qty;
+                        if (cart[i].qty < 1) cart.splice(i, 1);
+                        break;
+                    case "clear":
+                        cart.splice(i, 1);
+                        if (cart.length == 0) delete req.session.cart;
+                        break;
+                    default:
+                        console.log('update problem');
+                        break;
+                }
+                break;
+            }
+        }
+
+        req.flash('success', 'Cập nhật giỏ hàng thành công!');
+        return res.redirect('/checkout');
+    } catch (error) {
+        return res.status(500).json({
+            type: "Error",
+            msg: error
+        })
+    }
+}
+
 let postCart = async(req, res) => {
     try {
         let param = req.body;
@@ -90,6 +145,8 @@ let postCart = async(req, res) => {
             total: total
         }
         await cartModel.create(data);
+        delete req.session.cart;
+        req.flash('success', 'Đặt hàng thành công!');
         return res.redirect("/")
     } catch (error) {
         return res.status(500).json({
@@ -99,8 +156,23 @@ let postCart = async(req, res) => {
     }
 }
 
+let clearCart = async(req, res) => {
+    try {
+        delete req.session.cart;
+        req.flash('success', 'Xóa giỏ hàng thành công!');
+        return res.redirect('/checkout');
+    } catch (error) {
+        return res.status(500).json({
+            type: "Error",
+            msg: error
+        })
+    }
+}
+
 module.exports = {
     addToCart: addToCart,
     getCart: getCart,
-    postCart: postCart
+    postCart: postCart,
+    getUpdateQty: getUpdateQty,
+    clearCart: clearCart
 }

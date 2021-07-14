@@ -554,6 +554,7 @@ ul.events-icons.new-inf img {
     -o-transition: 2s all;
     box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
     padding: 2em 0;
+    height: 150px;
 }
 
 .bottom-gd2-active {
@@ -1274,19 +1275,25 @@ a.move-top span {
 }
 
 .addToCard {
-    margin-top: 10px;
+    padding: 1em;
 }
 
 .addToCard a:hover {
-    color: #2d2df1;
-    background-color: #ed3232;
+    color: #2C2D34;
+    background-color: #EFD510;
 }
 
 .addToCard a {
-    color: #ed3232;
-    background-color: #2d2df1;
-    padding: 8px;
+    color: #EFD510;
+    background-color: #2C2D34;
+    padding: 0.9em;
     border-radius: 3px;
+}
+
+.cart hr {
+    background-color: #EFD510;
+    border: 2px solid #EFD510;
+    margin-top: 3px;
 }
 
 

@@ -2,25 +2,28 @@
     <ul>
         <%if(success_message.length>0){%>
             <%success_message.forEach(function(message){%>
-                <li class="alert alert-success" style="list-style: none;">
+                <li class="alert alert-success alert-dismissible fade show" style="list-style: none;">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <%=message%>
-                        <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i>
+                        <!-- <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i> -->
                 </li>
                 <%})%>
                     <%}%>
                         <%if(error_message.length>0){%>
                             <%error_message.forEach(function(message){%>
-                                <li class="alert alert-danger" style="list-style: none">
+                                <li class="alert alert-danger alert-dismissible fade show" style="list-style: none">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
                                     <%=message%>
-                                        <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i>
+                                        <!-- <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i> -->
                                 </li>
                                 <%})%>
                                     <%}%>
                                         <%if(typeof errors != "undefined"){%>
 
-                                            <li class="alert alert-danger" style="list-style: none">
+                                            <li class="alert alert-danger alert-dismissible fade show" style="list-style: none">
+                                                <button type="button" class="close" data-dismiss="alert">&times;</button>
                                                 <%=errors[0].msg%>
-                                                    <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i>
+                                                    <!-- <i class="fa fa-times" onclick="exit_message()" style="float: right;cursor: pointer;"></i> -->
                                             </li>
 
                                             <%}%>

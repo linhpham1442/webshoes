@@ -36,7 +36,7 @@
                         <li><a href="/about">Giới thiệu</a></li>
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
-                        <li><a href="/cart">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                        <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
                     </ul>
                 </nav>
                 <!-- //nav -->
@@ -66,8 +66,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- bottom-gd2-active -->
                 <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row bottom-gd2-active">
+                    <div class="bottom-gd row">
                         <div class="icon-gd col-md-3 text-center"><span class="fa fa-bullhorn" aria-hidden="true"></span></div>
                         <div class="icon-gd-info col-md-9">
                             <h3 class="mb-2">ĐỔI TRẢ HÀNG MIỄN PHÍ</h3>
@@ -161,11 +162,11 @@
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money"><%=top.price%> VND</span>
+                                            <span class="money"><%=top.price%> đ</span>
                                         </div>
                                     </div>
                                     <div class="addToCard">
-                                        <a href="/addToCart/<%=top.slug%>">Add to cart</a>
+                                        <a href="/addToCart/<%=top.slug%>">Thêm vào giỏ hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -210,11 +211,11 @@
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money"><%=popular.price%> VND</span>
+                                            <span class="money"><%=popular.price%> đ</span>
                                         </div>
                                     </div>
                                     <div class="addToCard">
-                                        <a href="/addToCart/<%=popular.slug%>">Add to cart</a>
+                                        <a href="/addToCart/<%=popular.slug%>">Thêm vào giỏ hàng</a>
                                     </div>
                                 </div>
                             </div>
