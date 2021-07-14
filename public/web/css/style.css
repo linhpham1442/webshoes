@@ -13,6 +13,7 @@ body {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
 }
+
 body a {
     text-decoration: none;
     transition: 0.5s all;
@@ -25,6 +26,7 @@ body a {
 a:hover {
     text-decoration: none;
 }
+
 input[type="button"],
 input[type="submit"],
 input[type="text"],
@@ -51,7 +53,7 @@ h6 {
 }
 
 p {
-    font-size:0.9em;
+    font-size: 0.9em;
     color: #8c9398;
     line-height: 2em;
     letter-spacing: 1px;
@@ -75,9 +77,12 @@ ol {
     margin-bottom: 0 !important;
 }
 
+
 /*--/header --*/
 
+
 /* header */
+
 
 /* CSS Document */
 
@@ -92,6 +97,7 @@ header {
     display: none;
 }
 
+
 /* Giving a background-color to the nav container. */
 
 nav {
@@ -99,18 +105,16 @@ nav {
     padding: 0;
 }
 
-
 #logo a {
     float: left;
     display: initial;
     margin: 0;
     letter-spacing: 1px;
-    color: #fff;
+    color: #F1EC40;
     font-size: 1em;
     font-weight: 700;
     text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
 }
-
 
 
 /* Since we'll have the "ul li" "float:left"
@@ -121,6 +125,7 @@ nav:after {
     display: table;
     clear: both;
 }
+
 
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
@@ -134,6 +139,7 @@ nav ul {
     position: relative;
 }
 
+
 /* Positioning the navigation items inline */
 
 nav ul li {
@@ -142,6 +148,7 @@ nav ul li {
     display: inline-block;
     float: left;
 }
+
 
 /* Styling the links */
 
@@ -160,27 +167,31 @@ nav ul li {
     -ms-transition: 0.5s all ease;
 }
 
-
 .menu li ul li a {
     color: #555;
     padding: 10px 10px;
     font-size: 0.8em;
 }
 
-
 .menu li ul li:hover {
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
 }
+
 
 /* Background color change on Hover */
 
 nav .menu li a:hover {
-    color: #ff4c4c;
+    color: #F1EC40;
+}
+
+nav .menu li ul li a:hover {
+    color: #EFD510;
 }
 
 .menu li.active a {
-    color: #ff4c4c;
+    color: #F1EC40;
 }
+
 
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
@@ -194,11 +205,13 @@ nav ul ul {
     padding: 10px;
 }
 
+
 /* Display Dropdowns on Hover */
 
-nav ul li:hover > ul {
+nav ul li:hover>ul {
     display: inherit;
 }
+
 
 /* Fisrt Tier Dropdown */
 
@@ -216,6 +229,7 @@ nav ul ul li a {
     display: block;
 }
 
+
 /* Second, Third and more Tiers	
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
@@ -231,7 +245,7 @@ nav ul ul ul li {
 
 /* Change ' +' in order to change the Dropdown symbol */
 
-li > a:only-child:after {
+li>a:only-child:after {
     content: '';
 }
 
@@ -240,7 +254,6 @@ li > a:only-child:after {
 --------------------------------------------- */
 
 @media all and (max-width: 768px) {
-
     #logo {
         display: block;
         padding: 0;
@@ -248,18 +261,15 @@ li > a:only-child:after {
         text-align: center;
         float: none;
     }
-
     nav {
         margin: 0;
     }
-
     /* Hide the navigation menu by default */
     /* Also hide the  */
-    .toggle + a,
+    .toggle+a,
     .menu {
         display: none;
     }
-
     /* Stylinf the toggle lable */
     .toggle {
         display: block;
@@ -273,7 +283,6 @@ li > a:only-child:after {
         cursor: pointer;
         text-transform: uppercase;
     }
-
     .menu .toggle {
         float: none;
         text-align: center;
@@ -284,20 +293,17 @@ li > a:only-child:after {
         font-size: 16px;
         letter-spacing: 1px;
     }
-
     .toggle:hover {
         color: #333;
         background-color: #fff;
     }
-
     /* Display Dropdown when clicked on Parent Lable */
-    [id^=drop]:checked + ul {
+    [id^=drop]:checked+ul {
         display: block;
         background: rgba(16, 16, 16, 0.85);
         padding: 15px 0;
         text-align: center;
     }
-
     /* Change menu item's width to 100% */
     nav ul li {
         display: block;
@@ -305,21 +311,17 @@ li > a:only-child:after {
         padding: 5px 0;
         margin: 0 0;
     }
-
     nav ul ul .toggle,
     nav ul ul a {
         padding: 0 40px;
     }
-
     nav ul ul ul a {
         padding: 0 80px;
     }
-
     nav a:hover,
     nav ul ul ul a {
         background-color: transparent;
     }
-
     nav ul li ul li .toggle,
     nav ul ul a,
     nav ul ul ul a {
@@ -327,8 +329,6 @@ li > a:only-child:after {
         color: #FFF;
         font-size: 17px;
     }
-
-
     nav ul li ul li .toggle,
     nav ul ul a {
         background-color: #212121;
@@ -343,14 +343,13 @@ li > a:only-child:after {
         color: #ffffff;
         /* has to be the same number as the "line-height" of "nav a" */
     }
-
     /* Hide menus on hover */
-    nav ul ul li:hover > ul,
-    nav ul li:hover > ul {
+    nav ul ul li:hover>ul,
+    nav ul li:hover>ul {
         display: none;
     }
-    nav ul ul{
-        background:none!important;
+    nav ul ul {
+        background: none!important;
     }
     /* Fisrt Tier Dropdown */
     nav ul ul li {
@@ -358,12 +357,10 @@ li > a:only-child:after {
         width: 100%;
         padding: 0;
     }
-
     nav ul ul ul li {
         position: static;
         /* has to be the same number as the "width" of "nav ul ul li" */
     }
-
     nav ul ul li a {
         color: #fff;
         font-size: 0.85em;
@@ -371,31 +368,31 @@ li > a:only-child:after {
 }
 
 @media all and (max-width: 330px) {
-
     nav ul li {
         display: block;
         width: 94%;
     }
-
 }
 
+
 /* header */
+
 
 /*--/banner --*/
 
 .main-banner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/banner1.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     position: relative;
-    height: 50em;
+    height: 45em;
 }
 
 .main-banner.inner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/banner1.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -404,6 +401,7 @@ li > a:only-child:after {
     position: relative;
     height: 20em;
 }
+
 
 /*-- place holder --*/
 
@@ -449,6 +447,7 @@ li > a:only-child:after {
     margin: 0;
     text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
 }
+
 .ban-buttons a {
     background: #fff;
     padding: 11px 31px;
@@ -483,11 +482,15 @@ a.btn.active {
     border: #10adfb;
 }
 
+
 /*-- //place holder --*/
+
 
 /*-- //banner --*/
 
+
 /*-- features --*/
+
 .hand-crafted {
     background: #f7f7f7;
 }
@@ -603,8 +606,12 @@ ul.tic-info li {
     margin: 0;
 }
 
+
 /*-- //features --*/
+
+
 /*-- /New-Arrivals --*/
+
 .product-shoe-info {
     padding: 15px;
     border: 1px solid #e4e4e4;
@@ -640,9 +647,11 @@ ul.stars li a span {
     font-size: 0.7em;
     color: #6a6c6d;
 }
-ul.stars li a span:hover{
-    opacity:0.8;
+
+ul.stars li a span:hover {
+    opacity: 0.8;
 }
+
 span.product-new-top {
     background: #414b52;
     font-size: 0.8em;
@@ -650,6 +659,7 @@ span.product-new-top {
     padding: 0.3em 1.2em;
     color: #fff;
 }
+
 
 /*-- //New-Arrivals --*/
 
@@ -662,10 +672,13 @@ section#brands {
     font-size: 2.5em;
 }
 
+
 /*--about-grids--*/
+
 .service-content {
     margin-left: 1em;
 }
+
 .icon span {
     width: 60px;
     height: 60px;
@@ -678,6 +691,7 @@ section#brands {
     -webkit-transition: all 1s;
     -o-transition: all 1s;
 }
+
 .service-content h4 {
     font-size: 1.15em;
     line-height: 1.75em;
@@ -687,6 +701,7 @@ section#brands {
     letter-spacing: 2px;
     margin-bottom: 0.5em;
 }
+
 
 /*-- /testimonials --*/
 
@@ -752,52 +767,69 @@ ul.list-unstyled.w3layouts-icons.clients li span:hover {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-
 }
+
 
 /*-- //testimonials --*/
-.men-thumb-item{
-   position: relative;
+
+.men-thumb-item {
+    position: relative;
 }
+
 .item-info-product h4 {
     margin-top: 0.5em;
 }
-.shop-now{
+
+.shop-now {
     position: absolute;
     bottom: 8%;
     right: 8%;
 }
+
 .shop-now a {
     font-size: 0.9em;
     text-transform: uppercase;
     font-weight: 600;
-    text-decoration:none;
-    color:#333;
+    text-decoration: none;
+    color: #333;
 }
+
 h4.group.card-title {
     font-size: 1.2em;
     letter-spacing: 2px;
     color: #464f56;
 }
+
+
 /*--/breadcrumb--*/
+
 ol.breadcrumb {
     background: none;
     margin: 0;
     padding: 1em 2em;
     background: #f7f7f7;
 }
+
 li.breadcrumb-item {
     font-size: 0.9em;
     letter-spacing: 1px;
 }
+
 .breadcrumb-item.active {
     color: #888;
 }
+
 li.breadcrumb-item a {
     color: #ff4c4c;
 }
+
+
 /*--//breadcrumbr--*/
+
+
 /*--/shop--*/
+
+
 /*-- special deals --*/
 
 .img-deal1 {
@@ -805,13 +837,12 @@ li.breadcrumb-item a {
 }
 
 .img-deal1 h3 {
-        color: #495057;
-        font-size: 13px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
-    
-    
+    color: #495057;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
 .img-deal1 a {
     font-size: 14px;
     color: #6d6c6c;
@@ -820,6 +851,7 @@ li.breadcrumb-item a {
 .img-deals img {
     border: 1px solid #ddd;
 }
+
 ul.w3layouts-box-list li {
     list-style: none;
     display: block;
@@ -828,39 +860,44 @@ ul.w3layouts-box-list li {
     letter-spacing: 1px;
     font-size: 0.9em;
 }
-.grid-img-right{
-background: url(../images/single.jpg)no-repeat center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
--ms-background-size: cover;
-background-size: cover;
-position: relative;
-height:15em;
-padding:5.5em 2em 0 0;
+
+.grid-img-right {
+    background: url(../images/single.jpg)no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 15em;
+    padding: 5.5em 2em 0 0;
 }
-.grid-img-right span.money{
+
+.grid-img-right span.money {
     color: #fff;
-    display:block;
+    display: block;
 }
+
 .grid-img-right a {
     font-size: 0.9em;
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
     color: #fff;
-    padding:0;
-
+    padding: 0;
 }
+
 .desc1-left {
     border: 1px solid #ddd;
 }
+
 .desc1-right h3 {
     text-shadow: 0 1px 0 #ffffff;
     color: #1e272e;
     font-size: 1.1em;
     margin-bottom: 15px;
 }
+
 .desc1-right h5 {
     font-size: 1.3em;
     color: #62676b;
@@ -868,6 +905,7 @@ padding:5.5em 2em 0 0;
     -webkit-text-stroke: 0.2px;
     font-weight: 400;
 }
+
 .share h4 {
     font-size: 0.9em;
     color: #555555;
@@ -876,9 +914,11 @@ padding:5.5em 2em 0 0;
     text-shadow: 0 1px 0 #ffffff;
     font-weight: 400;
 }
+
 .desc1-right h5 span {
     text-decoration: line-through;
 }
+
 .desc1-right h5 a {
     margin-left: 5px;
     color: #555555;
@@ -887,6 +927,7 @@ padding:5.5em 2em 0 0;
     -webkit-text-stroke: 0px;
     letter-spacing: 0px;
 }
+
 .available span a {
     margin: 4% 0;
     display: block;
@@ -896,6 +937,7 @@ padding:5.5em 2em 0 0;
     text-shadow: 0 1px 0 #ffffff;
     text-decoration: underline;
 }
+
 h3.shop-sing {
     text-transform: uppercase;
     font-size: 1.2em;
@@ -903,18 +945,24 @@ h3.shop-sing {
     margin: 1.5em 0 2em 0;
     color: #323a40;
 }
+
 p.italic-blue {
     font-style: italic;
     color: #89bff3;
     font-weight: 500;
 }
+
+
 /*--//shop--*/
+
+
 /*-- customer --*/
 
 .customer-rev ul li span {
     color: #f58b8d;
     font-size: 0.8em
 }
+
 h3.sear-head {
     color: #1e272e;
     margin-bottom: 20px;
@@ -923,9 +971,11 @@ h3.sear-head {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 .customer-rev ul li {
-	list-style: none;
+    list-style: none;
 }
+
 .customer-rev ul li a span {
     color: #a4a6a9;
     font-weight: normal;
@@ -934,6 +984,7 @@ h3.sear-head {
 
 
 /*-- //customer --*/
+
 
 /*--/footer--*/
 
@@ -945,7 +996,7 @@ h3.footer-title {
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #3d3f44;
+    color: #fff;
 }
 
 footer p {
@@ -990,15 +1041,27 @@ form.w3layouts-newsletter {
     padding: 0.7em 2em;
 }
 
+.logo-2 {
+    justify-content: start;
+    display: flex;
+}
+
 h2.logo-2 a {
     font-weight: 700;
     font-size: 34px;
-    color: #1c1d21;
+    /* color: #1c1d21; */
+    color: #fff;
     text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
     letter-spacing: 1px;
 }
+
+
 /*--contact--*/
-.contact-right-content input[type="text"], .contact-right-content input[type="email"],.contact-right-content input[type="tel"], .contact-right-content textarea {
+
+.contact-right-content input[type="text"],
+.contact-right-content input[type="email"],
+.contact-right-content input[type="tel"],
+.contact-right-content textarea {
     padding: 0.8em 1em;
     color: #495057;
     border: none;
@@ -1012,6 +1075,7 @@ h2.logo-2 a {
     width: 100%;
     background: #f0f1f3;
 }
+
 .contact-right-content input[type="submit"] {
     outline: none;
     border: none;
@@ -1027,8 +1091,9 @@ h2.logo-2 a {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-    border-radius:0em;
+    border-radius: 0em;
 }
+
 .contact-left-content h4 {
     color: #3d3f44;
     font-weight: 600;
@@ -1036,19 +1101,26 @@ h2.logo-2 a {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.contact-left-content a{
+
+.contact-left-content a {
     color: #8c9398;
 }
-.contact-left-content p{
-    margin-bottom:0;
+
+.contact-left-content p {
+    margin-bottom: 0;
 }
+
 .contact-left-content {
     padding-left: 2em;
 }
+
 .contact-right-content textarea {
     min-height: 10em;
 }
+
+
 /*--//contact--*/
+
 .map-fo iframe {
     min-height: 350px;
     border: none;
@@ -1057,7 +1129,9 @@ h2.logo-2 a {
     width: 100%;
 }
 
+
 /* social icons */
+
 .w3layouts_social_list li {
     display: inline-block;
 }
@@ -1092,9 +1166,12 @@ a.w3pvt_google {
     background: #F44336;
 }
 
+
 /* //social-icons */
 
+
 /* contact address */
+
 .contact-info h4,
 h4.sub-con-fo {
     font-size: 0.9em;
@@ -1106,6 +1183,7 @@ h4.sub-con-fo {
 
 .footer-grid_section_w3layouts li a {
     color: #727377;
+    /* color: #121212; */
     font-size: 0.8em;
     letter-spacing: 1px;
 }
@@ -1132,12 +1210,26 @@ ul.w3layouts-icons li a {
 .footer-grid_section_w3layouts {
     padding: 3em 0;
 }
+
+footer {
+    background-color: #121212;
+}
+
+
+/* footer h2 {
+    color: #F1EC40;
+} */
+
 .contact-info a {
     color: #777;
 }
+
+
 /* //contact address */
 
+
 /* copyright */
+
 .cpy-right-sec {
     background: #1c1d21;
 }
@@ -1162,11 +1254,15 @@ ul.w3layouts-icons li a {
     color: #ff6b6b;
 }
 
+
 /* //copyright */
+
 
 /*--//footer--*/
 
+
 /*-- to-top --*/
+
 a.move-top span {
     color: #fff;
     width: 36px;
@@ -1176,19 +1272,24 @@ a.move-top span {
     line-height: 2em;
     background: #4a4b4c;
 }
+
 .addToCard {
     margin-top: 10px;
 }
-.addToCard a:hover{
+
+.addToCard a:hover {
     color: #2d2df1;
     background-color: #ed3232;
 }
-.addToCard a{
+
+.addToCard a {
     color: #ed3232;
     background-color: #2d2df1;
     padding: 8px;
     border-radius: 3px;
 }
+
+
 /*-- //to-top --*/
 
 @media(max-width:1366px) {
@@ -1232,17 +1333,19 @@ a.move-top span {
         font-size: 12px;
     }
 }
+
 @media(max-width:1024px) {
     .banner-info {
         padding: 14em 0 0em 3em;
         width: 40%;
     }
-    .feature-grids h3, .bottom-gd.fea h3 {
+    .feature-grids h3,
+    .bottom-gd.fea h3 {
         font-size: 0.8em;
     }
 }
-@media(max-width:991px) {
 
+@media(max-width:991px) {
     .gd-bottom {
         float: left;
         width: 50%;
@@ -1281,6 +1384,7 @@ a.move-top span {
     }
 }
 
+
 /*** Responsive Menu For Smaller Device ***/
 
 @media screen and (max-width:900px) {
@@ -1294,7 +1398,8 @@ a.move-top span {
     .main-banner {
         height: 38em;
     }
-    .feature-grids h3, .bottom-gd.fea h3 {
+    .feature-grids h3,
+    .bottom-gd.fea h3 {
         font-size: 0.9em;
     }
 }
@@ -1351,7 +1456,7 @@ a.move-top span {
         float: right;
         width: 60%;
     }
-    .desc1-right{
+    .desc1-right {
         margin-top: 1.5em;
     }
     .contact-left-content {
@@ -1400,7 +1505,6 @@ a.move-top span {
     .sub-para-w3layouts {
         margin: 0;
     }
-   
 }
 
 @media(max-width:480px) {
@@ -1426,7 +1530,7 @@ a.move-top span {
 
 @media(max-width:440px) {
     .banner-info {
-        padding:8em 0 0em 1em;
+        padding: 8em 0 0em 1em;
         width: 68%;
     }
     .main-banner {
@@ -1445,7 +1549,6 @@ a.move-top span {
         width: 100%;
         margin-top: 1em;
     }
-
 }
 
 @media(max-width:414px) {
@@ -1455,16 +1558,11 @@ a.move-top span {
     }
 }
 
-@media(max-width:384px) {
-  
-}
+@media(max-width:384px) {}
 
-@media(max-width:375px) {
+@media(max-width:375px) {}
 
-}
+@media(max-width:320px) {}
 
-@media(max-width:320px) {
-  
-}
 
 /*--//responsive--*/

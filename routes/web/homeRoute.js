@@ -1,6 +1,6 @@
 const express = require('express');
 const Route = express.Router();
-const {homeController,cartController} = require('../../controllers/web/index');
+const { homeController, cartController } = require('../../controllers/web/index');
 Route.route('/').get(homeController.home);
 Route.route('/about').get(homeController.about);
 Route.route('/contact').get(homeController.contact);

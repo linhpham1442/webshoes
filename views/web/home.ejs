@@ -8,7 +8,8 @@
                 <!-- nav -->
                 <nav class="py-4">
                     <div id="logo">
-                        <h1> <a href="/"><span class="fa fa" aria-hidden="true">Tiệm Giày Mới</span> 
+                        <h1>
+                            <a href="/"><img src="assets/web/images/logomain.png" width="90px" height="90px">
                             </a>
                         </h1>
                     </div>
@@ -24,8 +25,12 @@
                             <input type="checkbox" id="drop-2" />
                             <ul>
                                 <%data.cates.forEach(function(cate){%>
-                                    <li><a href="/shop/<%=cate.slug%>"><%=cate.name%></a></li>
-                                <%})%>  
+                                    <li>
+                                        <a href="/shop/<%=cate.slug%>">
+                                            <%=cate.name%>
+                                        </a>
+                                    </li>
+                                    <%})%>
                             </ul>
                         </li>
                         <li><a href="/about">Giới thiệu</a></li>
@@ -37,12 +42,12 @@
                 <!-- //nav -->
             </div>
         </header>
-    
+
         <!-- //header -->
         <!--/banner-->
         <div class="banner-info">
             <H6>Xu hướng giày của tuần</H6>
-            <h3 class="mb-4">NIKE®	BRAND</h3>
+            <h3 class="mb-4">NIKE® BRAND</h3>
         </div>
         <!--// banner-inner -->
 
@@ -100,35 +105,35 @@
                 <div class="col-md-6 banner-image">
                     <div class="effect-w3">
                         <img src="assets/web/images/home-discount.jpg" alt="" class="img-fluid image1">
-    
+
                     </div>
-    
+
                 </div>
                 <div class="col-md-6 last-img pl-lg-5 p-3">
                     <h3 class="tittle mb-lg-5 mb-3"><span class="sub-tittle">HẾT MƯA RỒI, MANG GIÀY DA RA ĐƯỜNG THÔI </span>GIẢM GIÁ LÊN ĐẾN 50% CÁC SẢN PHẨM GIÀY DA</h3>
                     <p class="mb-4">Từ ngày 31/5 đến ngày 30/6/2021, một số sản phẩm thuộc dòng Leather Shoes (trừ các dòng Top Product và Popular Product) sẽ được giảm giá lên đến 50%. Số lượng giày khuyến mãi có hạn.</p>
                     <ul class="tic-info list-unstyled">
                         <li>
-    
+
                             <span class="fa fa-check mr-2"></span> Chất lượng giày khuyến mãi được đảm bảo
-    
+
                         </li>
                         <li>
-    
+
                             <span class="fa fa-check mr-2"></span> Được kiểm tra hàng trước khi thanh toán
-    
+
                         </li>
                         <li>
-    
+
                             <span class="fa fa-check mr-2"></span> Mỗi khách hàng chỉ được áp dụng tối đa 3 sản phẩm trong suốt chương trình khuyến mãi.
                         </li>
                         <li>
-    
+
                             <span class="fa fa-check mr-2"></span> Không áp dụng các chương trình khuyến mãi khác.
-    
+
                         </li>
                     </ul>
-    
+
                 </div>
             </div>
         </div>
@@ -149,22 +154,24 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="/product/<%=top.slug%>"><%=top.name%></a>
+                                        <a href="/product/<%=top.slug%>">
+                                            <%=top.name%>
+                                        </a>
                                     </h4>
-        
+
                                     <div class="product_price">
                                         <div class="grid-price">
                                             <span class="money"><%=top.price%> VND</span>
                                         </div>
                                     </div>
-                                    <div class="addToCard"> 
+                                    <div class="addToCard">
                                         <a href="/addToCart/<%=top.slug%>">Add to cart</a>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                <%})%>
+                    <%})%>
             </div>
 
         </div>
@@ -175,7 +182,9 @@
         <div class="container">
             <div class="test-info text-center">
                 <h3 class="my-md-2 my-3">Trần Huy Thắng</h3>
-                <p><span class="fa fa-quote-left"></span>Là một Sneakerholic lâu năm, tôi thật sự tin tưởng khi chọn mua sản phẩm tại Tiệm Giày Mới. Nơi đây chính là ngọn đuốc thắp lửa cho niềm đam mê sneakers của tôi, là những con người đã đóng góp rất nhiều vào bộ sưu tập sneakers đồ sộ mà bạn thường thấy trên các Youtube Sneakers Vlog của tôi. Bạn muốn có một đôi giày mà bạn mơ ước từ lâu, hay đơn giản là chỉ thấy thoáng qua ở đâu đó ? Hãy bước đến với Tiệm Giày Mới, đôi giày sẽ hiện hữu trước mắt bạn.<span class="fa fa-quote-right"></span></p>
+                <p><span class="fa fa-quote-left"></span>Là một Sneakerholic lâu năm, tôi thật sự tin tưởng khi chọn mua sản phẩm tại Tiệm Giày Mới. Nơi đây chính là ngọn đuốc thắp lửa cho niềm đam mê sneakers của tôi, là những con người đã đóng góp rất
+                    nhiều vào bộ sưu tập sneakers đồ sộ mà bạn thường thấy trên các Youtube Sneakers Vlog của tôi. Bạn muốn có một đôi giày mà bạn mơ ước từ lâu, hay đơn giản là chỉ thấy thoáng qua ở đâu đó ? Hãy bước đến với Tiệm Giày Mới, đôi giày sẽ
+                    hiện hữu trước mắt bạn.<span class="fa fa-quote-right"></span></p>
 
             </div>
         </div>
@@ -194,22 +203,24 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="/product/<%=popular.slug%>"><%=popular.name%></a>
+                                        <a href="/product/<%=popular.slug%>">
+                                            <%=popular.name%>
+                                        </a>
                                     </h4>
-        
+
                                     <div class="product_price">
                                         <div class="grid-price">
                                             <span class="money"><%=popular.price%> VND</span>
                                         </div>
                                     </div>
-                                    <div class="addToCard"> 
+                                    <div class="addToCard">
                                         <a href="/addToCart/<%=popular.slug%>">Add to cart</a>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                <%})%>
+                    <%})%>
             </div>
         </div>
     </section>
@@ -240,4 +251,5 @@
         </div>
     </section>
     <!-- brands -->
-    <!-- footer --></div>
+    <!-- footer -->
+    </div>
