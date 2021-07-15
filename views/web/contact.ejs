@@ -40,6 +40,12 @@
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
                         <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                        <% if (user) {%>
+                            <li class="user-detail "><a href="/logout" class="btn btn-login btn-user px-2"><span style="text-transform: capitalize;">Chào
+                                <%=user.name%></span> | Đăng xuất</a></li>
+                            <%} else {%>
+                                <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
+                                <%}%>
                     </ul>
                 </nav>
                 <!-- //nav -->

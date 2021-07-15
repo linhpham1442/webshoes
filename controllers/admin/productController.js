@@ -17,7 +17,8 @@ let index = async(req, res) => {
         return res.render('admin/layout/master', {
             content: productPage.index,
             data: result,
-            cate: cate
+            cate: cate,
+            title: "Sản phẩm"
         });
     } catch (err) {
         return res.status(500).json({
@@ -32,7 +33,8 @@ let getAdd = async(req, res) => {
         let cate = await cateModel.find({ isDeleted: 0 });
         return res.render('admin/layout/master', {
             content: productPage.add,
-            cate: cate
+            cate: cate,
+            title: "Thêm sản phẩm"
         });
     } catch (err) {
         return res.status(400).json({
@@ -66,6 +68,7 @@ let postAdd = async(req, res) => {
             data: data,
             errors: errors,
             cate: cate,
+            title: "Thêm sản phẩm"
         })
     }
     if (req.file) {
@@ -93,13 +96,16 @@ let getEdit = async(req, res) => {
     try {
         let result = await productModel.findOne({ _id: id });
         if (result === null) {
-            return res.render('admin/404');
+            return res.render('admin/404', {
+                title: "404"
+            });
         }
         let cate = await cateModel.find({ isDeleted: 0 });
         return res.render('admin/layout/master', {
             content: productPage.edit,
             data: result,
-            cate: cate
+            cate: cate,
+            title: "Chỉnh sửa đơn hàng"
         });
     } catch (err) {
         return res.status(400).json({
@@ -132,7 +138,8 @@ let postEdit = async(req, res) => {
                 content: productPage.edit,
                 cate: cate,
                 data: data,
-                errors: errors
+                errors: errors,
+                title: "Chỉnh sửa đơn hàng"
             });
         }
         await productModel.updateOne({ _id: id }, { $set: data });
@@ -148,7 +155,9 @@ let _delete = async(req, res) => {
     try {
         let foundProduct = await productModel.deleteOne({ _id: id });
         if (foundProduct === null) {
-            return res.render('admin/404');
+            return res.render('admin/404', {
+                title: "404"
+            });
         }
         await productModel.updateOne({ _id: id }, { $set: { isDeleted: 1 } });
         return res.redirect('/admin/product/');

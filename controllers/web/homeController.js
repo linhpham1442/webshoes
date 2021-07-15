@@ -6,7 +6,9 @@ const homePage = {
     contact: 'contact',
     about: 'about',
     shop: 'shop',
-    single: 'single'
+    single: 'single',
+    search: 'search'
+
 }
 let home = async(req, res) => {
     try {
@@ -126,7 +128,8 @@ let shop = async(req, res) => {
                 products: products,
                 cates: cates,
                 popularProduct: popularProduct,
-                lengthCart: lengthCart
+                lengthCart: lengthCart,
+                slug: slug
             },
             title: "Danh mục"
         })
@@ -137,6 +140,94 @@ let shop = async(req, res) => {
         })
     }
 }
+
+
+let search = async(req, res) => {
+    try {
+        if (req.session.cart == undefined) {
+            lengthCart = 0;
+        } else {
+            lengthCart = req.session.cart.length;
+        };
+        let popularProduct = await productModel.find({ popular: true }).limit(5);
+        let cates = await cateModel.find({ isDeleted: 0 });
+        if (req.query.search) {
+            const regex = new RegExp(req.query.search, 'i');
+            productModel.find({ name: regex }, function(err, allProducts) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return res.render('web/layout/master', {
+                        content: homePage.shop,
+                        data: {
+                            products: allProducts,
+                            cates: cates,
+                            popularProduct: popularProduct,
+                            lengthCart: lengthCart,
+                            slug: 'Tìm kiếm'
+                        },
+                        title: "Tìm kiếm"
+                    });
+                }
+            });
+        } else {
+            productModel.find({}, function(err, allProducts) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return res.render('web/layout/master', {
+                        content: homePage.shop,
+                        data: {
+                            products: allProducts,
+                            cates: cates,
+                            popularProduct: popularProduct,
+                            lengthCart: lengthCart,
+                            slug: 'Danh mục giày'
+                        },
+                        title: "Danh mục giày"
+                    });
+                }
+            });
+        }
+    } catch (err) {
+        return res.status(500).json({
+            type: 'error',
+            msg: err
+        })
+    }
+}
+
+
+let allproduct = async(req, res) => {
+    try {
+        if (req.session.cart == undefined) {
+            lengthCart = 0;
+        } else {
+            lengthCart = req.session.cart.length;
+        };
+        // let slug = req.params.slug;
+        let products = await productModel.find();
+        let popularProduct = await productModel.find({ popular: true }).limit(5);
+        let cates = await cateModel.find({ isDeleted: 0 });
+        return res.render('web/layout/master', {
+            content: homePage.shop,
+            data: {
+                products: products,
+                cates: cates,
+                popularProduct: popularProduct,
+                lengthCart: lengthCart,
+                slug: 'Danh mục giày'
+            },
+            title: "Danh mục giày"
+        })
+    } catch (err) {
+        return res.status(500).json({
+            type: 'error',
+            msg: err
+        })
+    }
+}
+
 let single = async(req, res) => {
     try {
         if (req.session.cart == undefined) {
@@ -171,5 +262,7 @@ module.exports = {
     contact: contact,
     about: about,
     shop: shop,
-    single: single
+    single: single,
+    allproduct: allproduct,
+    search: search
 }

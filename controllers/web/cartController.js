@@ -1,6 +1,7 @@
 const productModel = require("../../models/productModel");
 const cateModel = require('../../models/categoryModel');
 const cartModel = require('../../models/cartModel');
+// require('buffer');
 let cartPage = {
     cart: "cart",
     checkout: "checkout"
@@ -14,7 +15,6 @@ let addToCart = async(req, res) => {
             name: product.name,
             slug: product.slug,
             price: product.price,
-            image: product.image,
             qty: 1,
             total: product.price * 1
         })
@@ -43,14 +43,29 @@ let addToCart = async(req, res) => {
     req.flash('success', 'Thêm vào giỏ thành công');
     return res.redirect('/checkout');
 }
+
 let getCart = async(req, res) => {
     try {
+
+        let loggedIn = (req.isAuthenticated()) ? true : false
         if (req.session.cart == undefined) {
             lengthCart = 0;
         } else {
             lengthCart = req.session.cart.length;
         };
         let cart = req.session.cart;
+        // let name = "";
+        // let email = "";
+        // let phone = "";
+        // let address = "";
+        // let note = "";
+        // let user = req.session.user;
+        // if (loggedIn) {
+        //     name = user.name;
+        //     email = user.email;
+        //     phone = user.phone;
+        //     address = user.address;
+        // }
         let total = 0;
         if (cart != undefined) {
             for (let i = 0; i < cart.length; i++) {
@@ -64,8 +79,13 @@ let getCart = async(req, res) => {
                 cart: cart,
                 cates: cates,
                 total: total,
-                lengthCart: lengthCart
+                lengthCart: lengthCart,
             },
+            // name: name,
+            // email: email,
+            // phone: phone,
+            // address: address,
+            // note: note,
             title: "Giỏ hàng"
         })
     } catch (error) {

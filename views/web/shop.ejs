@@ -6,7 +6,7 @@
             <nav class="py-4">
                 <div id="logo">
                     <h1>
-                        <a href="/"><img src="assets/web/images/logomain.png" width="90px" height="90px">
+                        <a href="/"><img src="/assets/web/images/logomain.png" width="90px" height="90px">
                         </a>
                     </h1>
                 </div>
@@ -14,11 +14,11 @@
                 <label for="drop" class="toggle">Menu</label>
                 <input type="checkbox" id="drop" />
                 <ul class="menu mt-2">
-                    <li class="active"><a href="/">Trang chủ</a></li>
-                    <li>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active">
                         <!-- First Tier Drop Down -->
                         <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                        <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <a href="/shop">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                         <input type="checkbox" id="drop-2" />
                         <ul>
                             <%data.cates.forEach(function(cate){%>
@@ -34,6 +34,12 @@
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/contact">Liên hệ</a></li>
                     <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                    <% if (user) {%>
+                        <li class="user-detail "><a href="/logout" class="btn btn-login btn-user px-2"><span style="text-transform: capitalize;">Chào
+                            <%=user.name%></span> | Đăng xuất</a></li>
+                        <%} else {%>
+                            <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
+                            <%}%>
                 </ul>
             </nav>
             <!-- //nav -->
@@ -45,15 +51,13 @@
     <li class="breadcrumb-item">
         <a href="/">Trang chủ</a>
     </li>
-    <%data.cates.forEach(function(cate){%>
-        <li class="breadcrumb-item active">
-            <a href="/shop/<%=cate.slug%>" style="color:black">
-                <span>
-            <%=cate.name%>
+    <li class="breadcrumb-item active">
+        <a href="/shop/<%=data.slug%>" style="color:black">
+            <span style="text-transform: capitalize;">
+            <%=data.slug%>
         </span>
-            </a>
-        </li>
-        <%})%>
+        </a>
+    </li>
 </ol>
 <!---->
 <%- include('./partials/message')%>
@@ -67,13 +71,13 @@
 
                     <div class="search-bar w3layouts-newsletter">
                         <h3 class="sear-head">Tìm kiếm sản phẩm</h3>
-                        <form action="#" method="post" class="d-flex">
-                            <input type="search" placeholder="Tên sản phẩm..." name="search" class="form-control" required="">
+                        <form action="/search" method="GET" class="d-flex">
+                            <input type="search" placeholder="Tên sản phẩm..." name="search" class="form-control" required="" style="border-radius: 0;">
                             <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
                         </form>
                     </div>
                     <!-- discounts -->
-                    <div class="left-side mt-4">
+                    <div class="left-side mt-5">
                         <h3 class="sear-head">Danh mục giày </h3>
                         <ul class="w3layouts-box-list">
                             <li>
@@ -90,12 +94,12 @@
                         </ul>
                     </div>
                     <div class="deal-leftmk left-side">
-                        <h3 class="sear-head">Phổ biến</h3>
+                        <h3 class="sear-head mt-5">Phổ biến</h3>
                         <%data.popularProduct.forEach(function(popular){%>
-                            <div class="special-sec1 row mt-2">
+                            <div class="special-sec1 row mt-4">
                                 <a href="/product/<%=popular.slug%>">
                                     <div class="img-deals col-md-4">
-                                        <img src="data:<%=popular.image.contentType%>;base64,<%=popular.image.data%>" alt="" width="120px" height="70px">
+                                        <img src="data:<%=popular.image.contentType%>;base64,<%=popular.image.data%>" alt="" width="80px" height="70px">
                                     </div>
                                     <div class="img-deal1 col-md-4">
                                         <h3>
@@ -122,7 +126,7 @@
                                         <img src="data:<%=item.image.contentType%>;base64,<%=item.image.data%>" class="" alt="" width='191.33px' height="191.33px">
                                     </div>
                                     <div class="item-info-product">
-                                        <h4>
+                                        <h4 style="min-height: 87px;">
                                             <a href="/product/<%=item.slug%>">
                                                 <%=item.name%>
                                             </a>
@@ -133,7 +137,7 @@
                                                 <span class="money"><%=item.price%> VND</span>
                                             </div>
                                         </div>
-                                        <div class="addToCard">
+                                        <div class="addToCard mt-2">
                                             <a href="/product/<%=item.slug%>">Xem chi tiết</a>
                                         </div>
                                     </div>

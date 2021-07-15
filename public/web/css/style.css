@@ -192,6 +192,27 @@ nav .menu li ul li a:hover {
     color: #F1EC40;
 }
 
+.menu li.active ul li a {
+    color: #555;
+}
+
+.user-detail .btn-login {
+    background-color: #F1EC40;
+}
+
+.menu .user-detail a {
+    color: #121212 !important;
+}
+
+.user-detail a:hover {
+    color: #F1EC40 !important;
+}
+
+.user-detail .btn-login:hover {
+    background-color: #121212;
+    border: 0.5px solid #F1EC40;
+}
+
 
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
@@ -251,7 +272,13 @@ li>a:only-child:after {
 
 .bg-gradient-primary {
     background-color: #0d0808;
-    background-image: none;
+    background-image: cover;
+    width: 100%;
+    height: 730px;
+    background-size: cover;
+    top: 200px;
+    /* padding-top: %; */
+    /* position: absolute; */
 }
 
 form {
@@ -439,6 +466,10 @@ form {
     width: 32%;
 }
 
+.banner-info h5 {
+    color: #F1EC40;
+}
+
 .banner-info h3 {
     font-size: 3.5em;
     letter-spacing: 2px;
@@ -563,7 +594,7 @@ ul.events-icons.new-inf img {
     -o-transition: 2s all;
     box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
     padding: 2em 0;
-    height: 150px;
+    height: max-content;
 }
 
 .bottom-gd2-active {
@@ -869,6 +900,11 @@ ul.w3layouts-box-list li {
     color: #8c9398;
     letter-spacing: 1px;
     font-size: 0.9em;
+}
+
+ul.w3layouts-box-list li a:hover {
+    color: #F44336 !important;
+    font-weight: bolder;
 }
 
 .grid-img-right {
@@ -1285,6 +1321,7 @@ a.move-top span {
 
 .addToCard {
     padding: 1em;
+    align-self: flex-end;
 }
 
 .addToCard a:hover {
@@ -1309,7 +1346,13 @@ a.move-top span {
 /* Register */
 
 .bg-register-image {
-    background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+    background: url("../images/register.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-login-image {
+    background: url("../images/loginImg.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -1557,6 +1600,7 @@ form.user .btn-primary {
     }
     .product-men {
         margin-bottom: 1em;
+        /* min-height: 400px; */
     }
     .navbar-toggler {
         padding: 0.3rem 0.5rem;

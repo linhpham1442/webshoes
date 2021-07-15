@@ -37,6 +37,12 @@
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
                         <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                        <% if (user) {%>
+                            <li class="user-detail "><a href="/logout" class="btn btn-login btn-user px-2"><span style="text-transform: capitalize;">Chào
+                                <%=user.name%></span> | Đăng xuất</a></li>
+                            <%} else {%>
+                                <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
+                                <%}%>
                     </ul>
                 </nav>
                 <!-- //nav -->
@@ -57,10 +63,11 @@
     <section class="hand-crafted py-5">
         <div class="container">
             <div class="inner-sec py-md-5 px-lg-5">
-                <h3 class="tittle text-center"><span class="sub-tittle">VỀ CHÚNG TÔI</span> Chào mừng các bạn đến với "Tiệm Giày Mới"</h3>
-                <p class="mb-4 text-center px-lg-4">Tiệm Giày Mới được thành lập từ năm 2010. Từ những ngày đầu tiên, cửa hàng của Tiệm chỉ là ngôi nhà nhỏ và những con người với niềm đam mê lớn. Giờ đây, Tiệm đã có trên 30 cửa hàng tọa lạc khắp các quận huyện ở TPHCM. Với gần 11 năm kinh
-                    nghiệm, cùng với uy tín và sự đam mê mãnh liệt với những đôi giày của chúng tôi, Tiệm Giày Mới cam đoan sẽ gửi đến bạn những đôi giày mới nhất, đẹp nhất mà không phải lo lắng về hàng nhái hay kém chất lượng. Rất mong mọi người sẽ ủng
-                    hộ cho Tiệm Giày Mới, để chúng tôi có thể giữ lửa, cũng như truyền tải niềm đam mê giày đến với mọi người, để cộng đồng Sneakerholics càng lớn mạnh hơn.</p>
+                <h3 class="tittle text-center"><span class="sub-tittle">VỀ CHÚNG TÔI</span> CHÀO MỪNG BẠN ĐÃ ĐẾN VỚI USS: ULTRA SNEAKER STORE</h3>
+                <p class="mb-4 text-center px-lg-4">ULTRA SNEAKER STORE là tên mà chúng tôi đã chọn lọc suy nghĩ đặt cho website giày của chính mình, với một ý nghĩa kèm theo mà chúng tôi muốn gửi ngấm, lan tỏa cho các bạn là nó thể hiện sự bản lĩnh, phong cách, cá tính bên trong của mỗi
+                    cá nhân các bạn được bọc phát ra trong việc lựa chọn cho mình một đôi giày ăn ý, phù hợp và cực chất. <br>USS chúng tôi sẽ luôn cố gắng mang đến cho bạn một sự thoải mái, chất lượng khi mang vào chân mình một đôi giày lan tỏa sự đam
+                    mê bên trong bạn. <br>“TỰ TIN THỂ HIỆN CÁ TÍNH”
+                </p>
             </div>
         </div>
     </section>

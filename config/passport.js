@@ -3,9 +3,12 @@ var User = require('../models/userModel')
 var bcrypt = require('bcryptjs')
 
 module.exports = function(passport) {
-    passport.use(new LocalStragegy(function(username, password, done) {
+    passport.use(new LocalStragegy({
+        usernameField: 'email',
+        passwordField: 'password'
+    }, function(username, password, done) {
 
-        User.findOne({ username: username }, function(err, user) {
+        User.findOne({ email: username }, function(err, user) {
             if (err)
                 console.log(err);
             if (!user) {

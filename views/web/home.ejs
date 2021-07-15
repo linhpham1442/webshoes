@@ -21,7 +21,7 @@
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="/shop">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
                                 <%data.cates.forEach(function(cate){%>
@@ -37,8 +37,18 @@
                         <li><a href="/about">Giới thiệu</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
                         <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
+                        <% if (user) {%>
+                            <li class="user-detail "><a href="/logout" class="btn btn-login btn-user px-2"><span style="text-transform: capitalize;">Chào
+                                <%=user.name%></span> | Đăng xuất</a></li>
+                            <%} else {%>
+                                <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
+                                <%}%>
+                                    <% if (user && (user.isAdmin == 1 || user.isAdmin == 0)) {%>
+                                        <li>
+                                            <li class=" user-detail "><a href="/admin/" class="btn btn-login btn-user px-2 ">Admin Area</a></li>
+                                        </li>
+                                        <% }%>
 
-                        <li><a href="/register">Đăng kí</a></li>
                     </ul>
                 </nav>
                 <!-- //nav -->
@@ -48,53 +58,54 @@
         <!-- //header -->
         <!--/banner-->
         <div class="banner-info">
-            <H6>Xu hướng giày của tuần</H6>
-            <h3 class="mb-4">NIKE® BRAND</h3>
+            <h5 class="pt-5">Xu hướng giày của tuần</h5>
+            <h3 class="mb-4 ">NIKE® BRAND</h3>
         </div>
         <!--// banner-inner -->
 
     </div>
     <!--//main-content-->
     <!--/ab -->
-    <section class="about py-md-5 py-5">
-        <div class="container-fluid">
-            <div class="feature-grids row px-3">
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-truck" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">FREE SHIPPING</h3>
+    <section class="about py-md-5 py-5 ">
+        <div class="container-fluid ">
+            <div class="feature-grids row px-3 ">
+                <div class="col-lg-3 gd-bottom ">
+                    <div class="bottom-gd row ">
+                        <div class="icon-gd col-md-3 text-center "><span class="fa fa-truck " aria-hidden="true "></span></div>
+                        <div class="icon-gd-info col-md-9 ">
+                            <h3 class="mb-2 ">FREE SHIPPING</h3>
                             <p>Với mỗi hóa đơn trên 2000000 VND</p>
                         </div>
                     </div>
                 </div>
                 <!-- bottom-gd2-active -->
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-bullhorn" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">ĐỔI TRẢ HÀNG MIỄN PHÍ</h3>
+                <div class="col-lg-3 gd-bottom ">
+                    <div class="bottom-gd row ">
+                        <div class="icon-gd col-md-3 text-center "><span class="fa fa-bullhorn " aria-hidden="true "></span></div>
+                        <div class="icon-gd-info col-md-9 ">
+                            <h3 class="mb-2 ">ĐỔI TRẢ HÀNG MIỄN PHÍ</h3>
                             <p>30 ngày kể từ ngày đầu tiên nhận sản phẩm</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-gift" aria-hidden="true"></span></div>
+                <div class="col-lg-3 gd-bottom ">
+                    <div class="bottom-gd row ">
+                        <div class="icon-gd col-md-3 text-center "> <span class="fa fa-gift " aria-hidden="true "></span></div>
 
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">KHÁCH HÀNG THÀNH VIÊN</h3>
+                        <div class="icon-gd-info col-md-9 ">
+                            <h3 class="mb-2 ">KHÁCH HÀNG THÀNH VIÊN</h3>
                             <p>Đăng kí thành viên và nhận ưu đãi giảm giá lên đến 30%</p>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-usd" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">HỖ TRỢ NHIỆT TÌNH</h3>
+                <div class="col-lg-3 gd-bottom ">
+                    <div class="bottom-gd row ">
+                        <div class="icon-gd col-md-3 text-center "> <span class="fa fa-usd " aria-hidden="true "></span></div>
+                        <div class="icon-gd-info col-md-9 ">
+                            <h3 class="mb-2 ">HỖ TRỢ NHIỆT TÌNH</h3>
                             <p>Hỗ trợ khách hàng 24/7</p>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -102,37 +113,37 @@
         </div>
     </section>
 
-    <section class="hand-crafted py-5">
-        <div class="container py-md-3">
-            <div class="row banner-grids">
-                <div class="col-md-6 banner-image">
-                    <div class="effect-w3">
-                        <img src="assets/web/images/home-discount.jpg" alt="" class="img-fluid image1">
+    <section class="hand-crafted py-5 ">
+        <div class="container py-md-3 ">
+            <div class="row banner-grids ">
+                <div class="col-md-6 banner-image ">
+                    <div class="effect-w3 ">
+                        <img src="assets/web/images/home-discount.jpg " alt=" " class="img-fluid image1 ">
 
                     </div>
 
                 </div>
-                <div class="col-md-6 last-img pl-lg-5 p-3">
-                    <h3 class="tittle mb-lg-5 mb-3"><span class="sub-tittle">HẾT MƯA RỒI, MANG GIÀY DA RA ĐƯỜNG THÔI </span>GIẢM GIÁ LÊN ĐẾN 50% CÁC SẢN PHẨM GIÀY DA</h3>
-                    <p class="mb-4">Từ ngày 31/5 đến ngày 30/6/2021, một số sản phẩm thuộc dòng Leather Shoes (trừ các dòng Top Product và Popular Product) sẽ được giảm giá lên đến 50%. Số lượng giày khuyến mãi có hạn.</p>
-                    <ul class="tic-info list-unstyled">
+                <div class="col-md-6 last-img pl-lg-5 p-3 ">
+                    <h3 class="tittle mb-lg-5 mb-3 "><span class="sub-tittle pb-3">HẾT MƯA RỒI, CÙNG NHAU MANG GIÀY RA ĐƯỜNG TỰ TIN KHOE CÁ TÍNH THÔI </span> GIẢM GIÁ LÊN ĐẾN 50% CÁC SẢN PHẨM GIÀY DA</h3>
+                    <p class="mb-4 ">Từ ngày 31/5 đến hết ngày 30/6/2021, một số sản phẩm thuộc dòng Sneakers sẽ được giảm giá lên đến 50%. Số lượng giày khuyến mãi có hạn.</p>
+                    <ul class="tic-info list-unstyled ">
                         <li>
 
-                            <span class="fa fa-check mr-2"></span> Chất lượng giày khuyến mãi được đảm bảo
+                            <span class="fa fa-check mr-2 "></span> Chất lượng giày khuyến mãi được đảm bảo
 
                         </li>
                         <li>
 
-                            <span class="fa fa-check mr-2"></span> Được kiểm tra hàng trước khi thanh toán
+                            <span class="fa fa-check mr-2 "></span> Được kiểm tra hàng trước khi thanh toán
 
                         </li>
                         <li>
 
-                            <span class="fa fa-check mr-2"></span> Mỗi khách hàng chỉ được áp dụng tối đa 3 sản phẩm trong suốt chương trình khuyến mãi.
+                            <span class="fa fa-check mr-2 "></span> Mỗi khách hàng chỉ được áp dụng tối đa 3 sản phẩm trong suốt chương trình khuyến mãi.
                         </li>
                         <li>
 
-                            <span class="fa fa-check mr-2"></span> Không áp dụng các chương trình khuyến mãi khác.
+                            <span class="fa fa-check mr-2 "></span> Không áp dụng các chương trình khuyến mãi khác.
 
                         </li>
                     </ul>
@@ -143,12 +154,12 @@
     </section>
     <!-- //ab -->
     <!--/ab -->
-    <section class="about py-5">
-        <div class="container pb-lg-3">
-            <h3 class="tittle text-center">TOP SELLERS</h3>
-            <div class="row">
+    <section class="about py-5 ">
+        <div class="container pb-lg-3 ">
+            <h3 class="tittle text-center ">TOP SELLERS</h3>
+            <div class="row ">
                 <%data.topProduct.forEach(function(top){%>
-                    <div class="col-md-4 product-men">
+                    <div class="col-md-4 product-men mt-4 ">
                         <a href="/product/<%=top.slug%>">
                             <div class="product-shoe-info shoe text-center">
                                 <div class="men-thumb-item">
@@ -156,7 +167,7 @@
                                     <span class="product-new-top">Top</span>
                                 </div>
                                 <div class="item-info-product">
-                                    <h4>
+                                    <h4 style="min-height: 60px;">
                                         <a href="/product/<%=top.slug%>">
                                             <%=top.name%>
                                         </a>
@@ -205,7 +216,7 @@
                                     <span class="product-new-top">Popular</span>
                                 </div>
                                 <div class="item-info-product">
-                                    <h4>
+                                    <h4 style="min-height: 60px;">
                                         <a href="/product/<%=popular.slug%>">
                                             <%=popular.name%>
                                         </a>
@@ -229,7 +240,7 @@
     </section>
     <!-- //ab -->
     <!-- brands -->
-    <section class="brands py-5" id="brands">
+    <!-- <section class="brands py-5" id="brands">
         <div class="container py-lg-0">
             <div class="row text-center brand-items">
                 <div class="col-sm-2 col-3">
@@ -252,7 +263,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- brands -->
     <!-- footer -->
     </div>
