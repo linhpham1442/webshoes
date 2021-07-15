@@ -1,10 +1,12 @@
 const express = require('express');
 const Route = express.Router();
-const { homeController, cartController } = require('../../controllers/web/index');
+const { homeController, cartController, userController } = require('../../controllers/web/index');
+const validator = require('../../auth/userAuth');
 Route.route('/').get(homeController.home);
 Route.route('/about').get(homeController.about);
 Route.route('/contact').get(homeController.contact);
 Route.route('/blog').get(homeController.blog);
+Route.route('/register').get(userController.getRegister).post(validator.addValidator(), userController.postRegister);
 Route.route('/shop/:slug').get(homeController.shop);
 Route.route('/product/:slug').get(homeController.single);
 Route.route('/addToCart/:slug').get(cartController.addToCart);

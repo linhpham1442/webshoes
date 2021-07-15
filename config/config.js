@@ -7,6 +7,8 @@ module.exports = {
     globalVariable: (req, res, next) => {
         res.locals.success_message = req.flash("success"),
             res.locals.error_message = req.flash("error");
+        res.locals.cart = req.session.cart;
+        res.locals.user = req.user || null;
         next();
     }
 }

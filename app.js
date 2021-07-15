@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const redis = require('redis');
@@ -9,6 +9,7 @@ const connectDB = require('./config/database');
 const router = require('./routes/admin/router');
 const webRoute = require('./routes/web/index');
 const { globalVariable } = require('./config/config');
+const passport = require('passport')
 
 let redisClient = redis.createClient(12998, 'redis-12998.c10.us-east-1-2.ec2.cloud.redislabs.com', { password: "P7gxdQtx6TFXRXGZwuEDmyfN4siGCzze" });
 let RedisStore = require('connect-redis')(session)
@@ -31,6 +32,13 @@ app.use(morgan('tiny'));
 //       resave: false,
 //     }
 //   ))
+
+
+//Passport config
+require('./config/passport')(passport)
+    //Passport Middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(globalVariable);
 app.use('/assets', express.static(__dirname + '/public'));

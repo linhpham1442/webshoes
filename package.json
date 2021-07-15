@@ -19,6 +19,7 @@
     "homepage": "https://github.com/linhpham1442/webshoes#readme",
     "dependencies": {
         "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
         "connect-flash": "^0.1.1",
         "connect-redis": "^6.0.0",
         "ejs": "^3.1.6",
@@ -29,6 +30,8 @@
         "morgan": "^1.10.0",
         "multer": "^1.4.2",
         "nodemon": "^2.0.12",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
         "redis": "^3.1.2",
         "slug": "^5.1.0"
     }
