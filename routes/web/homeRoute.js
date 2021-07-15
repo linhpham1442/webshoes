@@ -17,5 +17,5 @@ Route.route('/product/:slug').get(homeController.single);
 Route.route('/addToCart/:slug').get(cartController.addToCart, midlleware.isUser);
 Route.route('/cart/update/:slug').get(cartController.getUpdateQty);
 Route.route('/cart/clear').get(cartController.clearCart);
-Route.route('/checkout').get(cartController.getCart).post(cartController.postCart);
+Route.route('/checkout').get(cartController.getCart).post(validator.checkoutValidator(), cartController.postCart);
 module.exports = Route;

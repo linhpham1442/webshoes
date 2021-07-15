@@ -133,23 +133,23 @@
                     <form action="/checkout" method="POST">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Tên khách hàng</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tên" name="name">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tên" name="name" value="<%=name%>">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Email</label>
-                            <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="Email" name="email">
+                            <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="Email" name="email" value="<%=email%>">
                         </div>
                         <div class="form-group">
                             <label for="phone">Điện thoại</label>
-                            <input type="number" class="form-control" id="phone" placeholder="Điện thoại" name="phone">
+                            <input type="number" class="form-control" id="phone" placeholder="Điện thoại" name="phone" value="<%=phone%>">
                         </div>
                         <div class="form-group">
                             <label>Địa chỉ</label>
-                            <textarea class="form-control" aria-label="With textarea" name="address" placeholder="Địa chỉ"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="address" placeholder="Địa chỉ"><%=address%></textarea>
                         </div>
                         <div class="form-group">
                             <label>Ghi chú</label>
-                            <textarea class="form-control" aria-label="With textarea" name="note" placeholder="Ghi chú"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="note" placeholder="Ghi chú" value="<%=note%>"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success btn-user btn-block mt-2" style="font-size: 1em;">Xác nhận mua hàng    </button>
                     </form>

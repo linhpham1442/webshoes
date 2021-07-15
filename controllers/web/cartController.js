@@ -53,19 +53,22 @@ let getCart = async(req, res) => {
         } else {
             lengthCart = req.session.cart.length;
         };
+        user = res.locals.user;
         let cart = req.session.cart;
-        // let name = "";
-        // let email = "";
-        // let phone = "";
-        // let address = "";
-        // let note = "";
-        // let user = req.session.user;
-        // if (loggedIn) {
-        //     name = user.name;
-        //     email = user.email;
-        //     phone = user.phone;
-        //     address = user.address;
-        // }
+        let name = "";
+        let email = "";
+        let phone = "";
+        let address = "";
+        let note = "";
+        if (loggedIn) {
+            name = user.name;
+            email = user.email;
+            phone = user.phone;
+            address = user.address;
+        }
+        console.log(loggedIn);
+        console.log(res.locals.user)
+
         let total = 0;
         if (cart != undefined) {
             for (let i = 0; i < cart.length; i++) {
@@ -81,11 +84,11 @@ let getCart = async(req, res) => {
                 total: total,
                 lengthCart: lengthCart,
             },
-            // name: name,
-            // email: email,
-            // phone: phone,
-            // address: address,
-            // note: note,
+            name: name,
+            email: email,
+            phone: phone,
+            address: address,
+            note: note,
             title: "Giỏ hàng"
         })
     } catch (error) {
@@ -140,7 +143,7 @@ let getUpdateQty = async(req, res) => {
         }
 
         req.flash('success', 'Cập nhật giỏ hàng thành công!');
-        return res.redirect('/checkout');
+        return res.redirect('back');
     } catch (error) {
         return res.status(500).json({
             type: "Error",
@@ -151,23 +154,57 @@ let getUpdateQty = async(req, res) => {
 
 let postCart = async(req, res) => {
     try {
-        let param = req.body;
+        let loggedIn = (req.isAuthenticated()) ? true : false
+        user = res.locals.user;
         let cart = req.session.cart;
+        let name = "";
+        let email = "";
+        let phone = "";
+        let address = "";
+        let note = "";
+        if (loggedIn) {
+            name = user.name;
+            email = user.email;
+            phone = user.phone;
+            address = user.address;
+        }
+        let cates = await cateModel.find();
+        let param = req.body;
         let total = 0;
-        if (cart != undefined) {
-            for (let i = 0; i < cart.length; i++) {
-                total += cart[i].total;
+        // const errors = validationResult(req);
+        // if (!errors.isEmpty()) {
+        //     return res.render('admin/layout/master', {
+        //         content: cartPage.checkout,
+        //         errors: errors.array(),
+        //         data: {
+        //             cart: cart,
+        //             cates: cates,
+        //             total: total,
+        //             lengthCart: lengthCart,
+        //         },
+        //         name: name,
+        //         email: email,
+        //         phone: phone,
+        //         address: address,
+        //         note: note,
+        //         title: "Giỏ hàng"
+        //     });
+        // } else 
+        if (cart == undefined) {
+            req.flash('error', 'Giỏ hàng đang trống! Vui lòng thêm sản phẩm để đặt hàng');
+            return res.redirect("back")
+        } else {
+            let data = {
+                infoProduct: req.session.cart,
+                infoCustomer: param,
+                total: total
             }
+            await cartModel.create(data);
+            delete req.session.cart;
+            req.flash('success', 'Đặt hàng thành công!');
+            return res.redirect("/checkout")
         }
-        let data = {
-            infoProduct: req.session.cart,
-            infoCustomer: param,
-            total: total
-        }
-        await cartModel.create(data);
-        delete req.session.cart;
-        req.flash('success', 'Đặt hàng thành công!');
-        return res.redirect("/")
+
     } catch (error) {
         return res.status(500).json({
             type: 'Error',

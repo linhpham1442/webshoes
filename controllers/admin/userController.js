@@ -52,7 +52,7 @@ let postAdd = async(req, res) => {
         }
         let user = await userModel.findOne({ email: data.email });
         if (user != null) {
-            req.flash('error', "Tài khoản đã tồn tại.Vui lòng sử dụng email khác");
+            req.flash('error', "Tài khoản đã tồn tại. Vui lòng sử dụng email khác");
             return res.redirect("/admin/user/add");
         } else {
             await userModel.create(data);
