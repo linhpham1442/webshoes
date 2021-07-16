@@ -9,7 +9,8 @@ const connectDB = require('./config/database');
 const router = require('./routes/admin/router');
 const webRoute = require('./routes/web/index');
 const { globalVariable } = require('./config/config');
-const passport = require('passport')
+const passport = require('passport');
+const nodemailer = require('nodemailer')
 
 let redisClient = redis.createClient(12998, 'redis-12998.c10.us-east-1-2.ec2.cloud.redislabs.com', { password: "P7gxdQtx6TFXRXGZwuEDmyfN4siGCzze" });
 let RedisStore = require('connect-redis')(session)
@@ -39,6 +40,7 @@ require('./config/passport')(passport)
     //Passport Middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
 
 app.use(globalVariable);
 app.use('/assets', express.static(__dirname + '/public'));

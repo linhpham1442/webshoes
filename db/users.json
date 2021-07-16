@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "60edc2e464a124001f213a4b"
+  },
+  "email": "admin1@gmail.com",
+  "name": "Vu Tu122",
+  "address": "TPHCM",
+  "phone": 123456789,
+  "password": "$2b$10$hN/3CRXPoo6FryrVfdTFLeBVMZRv/jmTit5WSlHQKUxoWjNF316CG",
+  "isAdmin": 0,
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ef228e8af90a4ccc93370d"
+  },
+  "creationDate": {
+    "$date": "2021-07-14T17:43:22.437Z"
+  },
+  "email": "user123@gmail.com",
+  "name": "Hân Phạm",
+  "address": "Tạp hóa Ngọc Linh, tổ 13 khu phố Phước Lập, phường Mỹ Xuân, thị xã Phú Mỹ",
+  "phone": 364283811,
+  "password": "$2b$10$dTaYRpQ3eZsSb2nqbhrDDOgo.Ojs91wNUtXSLWATxgq3jubKWDFNu",
+  "isAdmin": 2,
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60f06c1068471f6b084a33bb"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T17:09:38.336Z"
+  },
+  "email": "18520992@gm.uit.edu.vn",
+  "name": "user1234",
+  "address": "ĐH CNNT",
+  "phone": 707190436,
+  "password": "$2a$10$7f6haQBnfJKEvGKELvqL0.D/DAED2gX/m4icQAli9AQvKgSm25tii",
+  "isAdmin": 2,
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60f08dd1c4d20e602c871920"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T19:32:24.541Z"
+  },
+  "email": "lililala145236@gmail.com",
+  "name": "lililala",
+  "address": "KTX khu A DHQG",
+  "phone": 332545612,
+  "password": "$2b$10$epAjy/F0p6byeTIzygtyDu.Xtqqi1MwRY0gXCSATzMnhQLL.mC0v2",
+  "isAdmin": 0,
+  "isDeleted": false,
+  "__v": 0
+}]

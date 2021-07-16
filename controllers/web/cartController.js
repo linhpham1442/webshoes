@@ -2,8 +2,32 @@ const productModel = require("../../models/productModel");
 const cateModel = require('../../models/categoryModel');
 const cartModel = require('../../models/cartModel');
 const nodemailer = require("nodemailer");
-const sendEmail = require('../../config/sendmail')
+// const sendEmail = require('../../config/sendmail')
 
+// const sendMail = (tomail, tieude, noidung) => {
+//     const transporter = nodemailer.createTransport({
+//         service: "gmail",
+//         auth: {
+//             user: 'lilalila145236@gmail.com',
+//             pass: 'gmail145236'
+//         }
+//     });
+
+//     const mailOptions = {
+//         from: 'lilalila145236@gmail.com', // sender address
+//         to: tomail,
+//         subject: tieude, // Subject line
+//         html: noidung
+//     }
+//     console.log(noidung);
+//     transporter.sendMail(mailOptions, function(error, info) {
+//         if (err) {
+//             console.log(error);
+//         } else {
+//             console.log('Email sent: ' + info.response)
+//         }
+//     })
+// }
 
 // require('buffer');
 let cartPage = {
@@ -168,6 +192,7 @@ let postCart = async(req, res) => {
                 total += cart[i].total;
             }
         }
+
         let name = param.name;
         let phone = param.phone;
         let address = param.address;
@@ -177,6 +202,44 @@ let postCart = async(req, res) => {
             req.flash('error', 'Giỏ hàng đang trống! Vui lòng thêm sản phẩm để đặt hàng');
             return res.redirect("back")
         } else {
+            let mailgh = "<h1 align='center'>Thông tin đơn hàng</h1>"
+            mailgh = mailgh + "<p>Họ tên: " + name + "</p>";
+            mailgh = mailgh + "<p>Địa chỉ giao hàng: " + address + "</p>";
+            mailgh = mailgh + "<p>Email: " + email + "</p>";
+            mailgh = mailgh + "<p>Số điện thoại: " + phone + "</p>";
+            mailgh = mailgh + "<table width='80%' cellspacing='0' cellpadding='2' boder='1'>"
+            mailgh = mailgh + "<tr><td width='10%'>STT</td><td width='30%'>Tên giày</td><td width='10%'>Số lượng</td><td width='15%'>Đơn giá</td><td>Thành tiền</td></tr>";
+            var stt = 1;
+            var tongtien = 0;
+            for (let i = 0; i < cart.length; i++) {
+                mailgh = mailgh + "<tr><td>" + stt + "</td><td>" + cart[i].name + "</td><td>" + cart[i].qty + "</td><td>" + cart[i].price + "</td><td>" + cart[i].total + "</td></tr>";
+                stt++;
+                tongtien = tongtien + cart[i].qty * cart[i].price;
+            }
+            mailgh = mailgh + "<tr><td colspan='6' align='right'>Tổng tiền: " + tongtien + "</td></tr></table>";
+            mailgh = mailgh + "<p>Cảm ơn quý khách đã đặt hàng, đơn hàng sẽ chuyển đến quý khách trong thời gian sớm nhất</p>";
+            const transporter = nodemailer.createTransport({
+                service: "gmail",
+                auth: {
+                    user: 'lilalila145236@gmail.com',
+                    pass: 'gmail145236'
+                }
+            });
+
+            const mailOptions = {
+                from: 'lilalila145236@gmail.com', // sender address
+                to: email,
+                subject: 'Đơn hàng giày từ USS - Ultra Sneaker Store', // Subject line
+                text: 'Cảm ơn quý khách đã đặt hàng, đơn hàng sẽ chuyển đến quý khách trong thời gian sớm nhất',
+                html: mailgh
+            }
+            transporter.sendMail(mailOptions, function(error, info) {
+                if (err) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response)
+                }
+            })
             let data = {
                 infoProduct: req.session.cart,
                 infoCustomer: param,
@@ -184,23 +247,6 @@ let postCart = async(req, res) => {
             }
             await cartModel.create(data);
 
-            // mailgh = "<h1 align='center'>Thông tin đơn hàng</h1>"
-            // mailgh = mailgh + "<p>Họ tên: " + name + "</p>";
-            // mailgh = mailgh + "<p>Địa chỉ giao hàng: " + address + "</p>";
-            // mailgh = mailgh + "<p>Email: " + email + "</p>";
-            // mailgh = mailgh + "<p>Số điện thoại: " + phone + "</p>";
-            // mailgh = mailgh + "<table width='80%' cellspacing='0' cellpadding='2' boder='1'>"
-            // mailgh = mailgh + "<tr><td width='10%'>STT</td><td width='30%'>Tên giày</td><td width='10%'>Số lượng</td><td width='15%'>Đơn giá</td><td>Thành tiền</td></tr>";
-            // var stt = 1;
-            // var tongtien = 0;
-            // for (let i = 0; i < cart.length; i++) {
-            //     mailgh = mailgh + "<tr><td>" + stt + "</td><td>" + cart[i].name + "</td><td>" + cart[i].qty + "</td><td>" + cart[i].price + "</td><td>" + cart[i].total + "</td></tr>";
-            //     stt++;
-            //     tongtien = tongtien + cart[i].qty * cart[i].price
-            // }
-            // mailgh = mailgh + "<tr><td colspan='6' align='right'>Tổng tiền: " + tongtien + "</td></tr></table>";
-            // mailgh = maigh + "<p>Cảm ơn quý khách đã đặt hàng, đơn hàng sẽ chuyển đến quý khách trong thời gian sớm nhất</p>";
-            // sendEmail(email, "Đơn hàng giày từ USS - Ultra Sneaker Store", mailgh)
             delete req.session.cart;
             req.flash('success', 'Đặt hàng thành công!');
             return res.redirect("/checkout")

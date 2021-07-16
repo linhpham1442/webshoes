@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "60efeac68ce7c20504aef33a"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T07:42:41.109Z"
+  },
+  "name": "ADIDAS",
+  "slug": "adidas",
+  "description": "Adidas ltd AG (ISIN: DE0005003404) là một nhà sản xuất dụng cụ thể thao của Đức, một thành viên của Adidas Group, bao gồm cả công ty dụng cụ thể thao Reebok, công ty golf Taylormade, công ty sản xuất bóng golf Maxfli và Adidas golf. Adidas là nhà sản xuất dụng cụ thể thao lớn thứ hai trên thế giới. Công ty được đặt theo tên của người sáng lập, Adolf (Adi) Dassler, năm 1948. Dassler đã sản xuất giày từ năm 1920 tại Herzogenaurach, gần Nürnberg, với sự giúp đỡ của người anh trai Rudolf Dassler, người mà sau đó đã thành lập công ty giày Puma. Công ty Adidas được đăng ký nhãn hiệu là Adidas AG vào ngày 18 tháng 8 1949. Những thiết kế quần áo và giày của công ty biểu tượng cho ba sọc kẻ chéo song song, họa tiết tương tự đã được đưa vào logo chính thức của công ty. Tài sản của công ty năm 2005 ước tính khoảng 6,6 tỷ Euro (khoảng 8,4 tỷ USD). Tài sản năm 2006 ước tính 10.084 tỷ Euro (13.625 tỷ USD). Những sản phẩm chăm sóc cá nhân và nước hoa của công ty được sản xuất bởi Coty, Inc. dưới bản quyền toàn cầu.",
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60efeb3c8ce7c20504aef33d"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T07:42:41.109Z"
+  },
+  "name": "LACOSTE",
+  "slug": "lacoste",
+  "description": "Giày hãng Lacoste mang xu hướng thiết kế thời thượng, sang trọng nhưng vẫn đơn giản và thanh lịch phù hợp cho nhiều đối tượng khách hàng cùng nhiều phong cách khác nhau. Giày hiệu Lacoste chiếm trọn lòng tin của khách hàng với chất lượng đảm bảo được làm từ công nghệ sản xuất tiên tiến bậc nhất thế giới, mang đến cho người dùng sự trải nghiệp tuyệt vời bởi sự êm ái, dễ chịu và thời trang.  Không chỉ dừng lại ở chất lượng, giày Lacoste sản xuất cho cả nam và nữ với đa dạng kiểu dáng mẫu mã, màu sắc và chất liệu cho nên khách hàng có thể dễ dàng tìm được đôi giày phù hợp cho phong cách riêng của bản thân.",
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60efeb788ce7c20504aef340"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T07:42:41.109Z"
+  },
+  "name": "NIKE",
+  "slug": "nike",
+  "description": "Nike là một trong những thương hiệu thể thao nổi tiếng nhất trên thế giới. Từ học sinh tiểu học cho đến các vận động viên chuyên nghiệp, không ai có thể phủ nhận sức hấp dẫn của Nike. Nếu bạn khảo sát xem có bao nhiêu người đã hoặc đang sở hữu các sản phẩm của Nike, thì con số này sẽ khiến bạn bất ngờ. Chất lượng của sản phẩm tạo nên uy tín của thương hiệu. Nhưng không thể phủ nhận vai trò của những chiến lược marketing vô cùng hiệu quả đã góp phần tạo nên thành công của Nike ngày hôm nay. Nike là nhà cung cấp giày và quần áo thể thao hàng đầu thế giới, đồng thời là nhà sản xuất quần áo thể thao lớn, với tổng doanh thu hơn 18,6 tỷ USD trong năm tài chính 2008. Tính đến năm 2008, công ty có hơn 30.000 nhân viên trên toàn thế giới.",
+  "isDeleted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60efeba48ce7c20504aef343"
+  },
+  "creationDate": {
+    "$date": "2021-07-15T07:42:41.109Z"
+  },
+  "name": "PUMA",
+  "slug": "puma",
+  "description": "Giày Puma đã dần trở nên quá phổ biến và được yêu thích trên toàn thế giới. Hãng sản xuất rất nhiều loại giày cho nhiều môn thể thao khác nhau như bóng đá, bóng rổ, bóng chày, điền kinh, golf … và những mẫu giày thời trang với kiểu dáng và họa tiết bắt mắt, những mẫu giày này rất được các tín đồ yêu thích. Ngoài ra, giày Puma còn sử dụng công nghệ hiện đại mang đến trải nghiệm tuyệt vời không thua gì các thương hiệu khác.",
+  "isDeleted": false,
+  "__v": 0
+}]

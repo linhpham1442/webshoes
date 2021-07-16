@@ -84,7 +84,7 @@
                                     <% data.cart.forEach(function(item){%>
                                         <% var sub = item.qty * item.price%>
                                             <% total += +sub%>
-                                                <tr scope="row">
+                                                <tr scope="row" class="text-center">
                                                     <!-- <td><img src="data:jpeg;base64,<%=item.image%>" width="80px" height="80px"></td> -->
                                                     <td>
                                                         <%= item.name%>
@@ -94,7 +94,7 @@
                                                     </td>
                                                     <td>
                                                         <div style="width:50px">
-                                                            <a href="/cart/update/<%= item.slug%>?action=add" style="color: #121212"><b>+</b></a>&nbsp;
+                                                            <a href="/cart/update/<%= item.slug%>?action=add" style="color: #121212"><b>+</b></a>&nbsp;&nbsp;&nbsp;
                                                             <a href="/cart/update/<%= item.slug%>?action=remove" style="color: #121212"><b>-</b></a>
                                                         </div>
                                                     </td>
