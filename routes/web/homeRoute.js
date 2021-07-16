@@ -3,6 +3,9 @@ const Route = express.Router();
 const midlleware = require('../../middleware/isLogin');
 const { homeController, cartController, userController } = require('../../controllers/web/index');
 const validator = require('../../auth/userAuth');
+const nodemailer = require("nodemailer");
+
+
 Route.route('/').get(homeController.home);
 Route.route('/about').get(homeController.about);
 Route.route('/contact').get(homeController.contact);

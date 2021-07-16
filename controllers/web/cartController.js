@@ -1,6 +1,10 @@
 const productModel = require("../../models/productModel");
 const cateModel = require('../../models/categoryModel');
 const cartModel = require('../../models/cartModel');
+const nodemailer = require("nodemailer");
+const sendEmail = require('../../config/sendmail')
+
+
 // require('buffer');
 let cartPage = {
     cart: "cart",
@@ -157,39 +161,18 @@ let postCart = async(req, res) => {
         let loggedIn = (req.isAuthenticated()) ? true : false
         user = res.locals.user;
         let cart = req.session.cart;
-        let name = "";
-        let email = "";
-        let phone = "";
-        let address = "";
-        let note = "";
-        if (loggedIn) {
-            name = user.name;
-            email = user.email;
-            phone = user.phone;
-            address = user.address;
-        }
-        let cates = await cateModel.find();
         let param = req.body;
         let total = 0;
-        // const errors = validationResult(req);
-        // if (!errors.isEmpty()) {
-        //     return res.render('admin/layout/master', {
-        //         content: cartPage.checkout,
-        //         errors: errors.array(),
-        //         data: {
-        //             cart: cart,
-        //             cates: cates,
-        //             total: total,
-        //             lengthCart: lengthCart,
-        //         },
-        //         name: name,
-        //         email: email,
-        //         phone: phone,
-        //         address: address,
-        //         note: note,
-        //         title: "Giỏ hàng"
-        //     });
-        // } else 
+        if (cart != undefined) {
+            for (let i = 0; i < cart.length; i++) {
+                total += cart[i].total;
+            }
+        }
+        let name = param.name;
+        let phone = param.phone;
+        let address = param.address;
+        let email = param.email;
+
         if (cart == undefined) {
             req.flash('error', 'Giỏ hàng đang trống! Vui lòng thêm sản phẩm để đặt hàng');
             return res.redirect("back")
@@ -200,6 +183,24 @@ let postCart = async(req, res) => {
                 total: total
             }
             await cartModel.create(data);
+
+            // mailgh = "<h1 align='center'>Thông tin đơn hàng</h1>"
+            // mailgh = mailgh + "<p>Họ tên: " + name + "</p>";
+            // mailgh = mailgh + "<p>Địa chỉ giao hàng: " + address + "</p>";
+            // mailgh = mailgh + "<p>Email: " + email + "</p>";
+            // mailgh = mailgh + "<p>Số điện thoại: " + phone + "</p>";
+            // mailgh = mailgh + "<table width='80%' cellspacing='0' cellpadding='2' boder='1'>"
+            // mailgh = mailgh + "<tr><td width='10%'>STT</td><td width='30%'>Tên giày</td><td width='10%'>Số lượng</td><td width='15%'>Đơn giá</td><td>Thành tiền</td></tr>";
+            // var stt = 1;
+            // var tongtien = 0;
+            // for (let i = 0; i < cart.length; i++) {
+            //     mailgh = mailgh + "<tr><td>" + stt + "</td><td>" + cart[i].name + "</td><td>" + cart[i].qty + "</td><td>" + cart[i].price + "</td><td>" + cart[i].total + "</td></tr>";
+            //     stt++;
+            //     tongtien = tongtien + cart[i].qty * cart[i].price
+            // }
+            // mailgh = mailgh + "<tr><td colspan='6' align='right'>Tổng tiền: " + tongtien + "</td></tr></table>";
+            // mailgh = maigh + "<p>Cảm ơn quý khách đã đặt hàng, đơn hàng sẽ chuyển đến quý khách trong thời gian sớm nhất</p>";
+            // sendEmail(email, "Đơn hàng giày từ USS - Ultra Sneaker Store", mailgh)
             delete req.session.cart;
             req.flash('success', 'Đặt hàng thành công!');
             return res.redirect("/checkout")

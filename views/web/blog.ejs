@@ -20,11 +20,11 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2">
-                        <li class="active"><a href="/">Trang chủ</a></li>
+                        <li><a href="/">Trang chủ</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="/shop">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
                                 <%data.cates.forEach(function(cate){%>
@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li><a href="/about">Giới thiệu</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li class="active"><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
                         <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
                         <% if (user) {%>
@@ -46,6 +46,11 @@
                             <%} else {%>
                                 <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
                                 <%}%>
+                                    <% if (user && (user.isAdmin == 1 || user.isAdmin == 0)) {%>
+                                        <li>
+                                            <li class=" user-detail "><a href="/admin/" class="btn btn-login btn-user px-2 ">Admin Area</a></li>
+                                        </li>
+                                        <% }%>
                     </ul>
                 </nav>
                 <!-- //nav -->
@@ -103,7 +108,7 @@
                             <div class="caption card-body">
                                 <h4 class="group card-title inner list-group-item-heading">
                                     CÁCH PHỐI GIÀY CONVERSE</h4>
-                                <p class="group inner list-group-item-text">
+                                <p class="group inner list-group-item-text" style="height: 230px;">
                                     Converse là cái tên quen thuộc của các tín đồ cuồng giày tại Việt Nam. Mặc dù cách phối đồ với giày converse đã được áp dụng phổ biến, nhưng để phối hợp chúng cho thật phong cách cũng không hề dễ dàng. Chỉ với một vài gợi ý trong “Tổng
                                     Hợp 10 Cách Phối Đồ Với Giày Converse Nam Nữ Cực Chất”, Tiệm Giày Mới sẽ giúp bạn sẽ càng thêm tự tin khi xuống phố.</p>
                                 <div class="row">
@@ -128,7 +133,7 @@
                             <div class="caption card-body">
                                 <h4 class="group card-title inner list-group-item-heading">
                                     CÁCH PHỐI GIÀY ADIDAS</h4>
-                                <p class="group inner list-group-item-text">
+                                <p class="group inner list-group-item-text" style="height: 230px;">
                                     Superstar là một trong những dòng giày thời trang lâu đời và nổi tiếng nhất của Adidas. Có thể dễ dàng kết hợp cùng nhiều phong cách trang phục khác nhau, Adidas Superstar cho đến nay vẫn chưa hề hạ nhiệt và vẫn là sự lựa chọn hàng đầu trong tủ giày của
                                     các bạn trẻ. Tiệm Giày Mới sẽ giúp bạn khám phá những bí kíp phối đồ ấn tượng nhất với Superstar trong bài viết này.</p>
                                 <div class="row">

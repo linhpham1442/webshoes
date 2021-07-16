@@ -40,6 +40,11 @@
                         <%} else {%>
                             <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
                             <%}%>
+                                <% if (user && (user.isAdmin == 1 || user.isAdmin == 0)) {%>
+                                    <li>
+                                        <li class=" user-detail "><a href="/admin/" class="btn btn-login btn-user px-2 ">Admin Area</a></li>
+                                    </li>
+                                    <% }%>
                 </ul>
             </nav>
             <!-- //nav -->

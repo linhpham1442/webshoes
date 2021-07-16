@@ -14,11 +14,11 @@
                 <label for="drop" class="toggle">Menu</label>
                 <input type="checkbox" id="drop" />
                 <ul class="menu mt-2">
-                    <li class="active"><a href="/">Trang chủ</a></li>
-                    <li>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active">
                         <!-- First Tier Drop Down -->
                         <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                        <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <a href="/shop">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                         <input type="checkbox" id="drop-2" />
                         <ul>
                             <%data.cates.forEach(function(cate){%>
@@ -40,6 +40,11 @@
                         <%} else {%>
                             <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
                             <%}%>
+                                <% if (user && (user.isAdmin == 1 || user.isAdmin == 0)) {%>
+                                    <li>
+                                        <li class=" user-detail "><a href="/admin/" class="btn btn-login btn-user px-2 ">Admin Area</a></li>
+                                    </li>
+                                    <% }%>
                 </ul>
             </nav>
             <!-- //nav -->
@@ -140,7 +145,7 @@
                             </h3>
                             <h5>
                                 <%=data.detailProduct.price%> VND</h5>
-                            <div class="addToCard mb-4">
+                            <div class="addToCard mb-4 pl-0">
                                 <a href="/addToCart/<%=data.detailProduct.slug%>">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="share-desc">

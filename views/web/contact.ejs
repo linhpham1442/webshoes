@@ -20,11 +20,11 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2">
-                        <li class="active"><a href="/">Trang chủ</a></li>
+                        <li><a href="/">Trang chủ</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle">Danh mục giày <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="/shop">Danh mục giày<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
                                 <%data.cates.forEach(function(cate){%>
@@ -38,7 +38,7 @@
                         </li>
                         <li><a href="/about">Giới thiệu</a></li>
                         <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Liên hệ</a></li>
+                        <li class="active"><a href="/contact">Liên hệ</a></li>
                         <li><a href="/checkout">Giỏ hàng<small>(<%=data.lengthCart%>)</small></a></li>
                         <% if (user) {%>
                             <li class="user-detail "><a href="/logout" class="btn btn-login btn-user px-2"><span style="text-transform: capitalize;">Chào
@@ -46,6 +46,11 @@
                             <%} else {%>
                                 <li class=" user-detail "><a href="/login" class="btn btn-login btn-user px-2 ">Đăng nhập</a></li>
                                 <%}%>
+                                    <% if (user && (user.isAdmin == 1 || user.isAdmin == 0)) {%>
+                                        <li>
+                                            <li class=" user-detail "><a href="/admin/" class="btn btn-login btn-user px-2 ">Admin Area</a></li>
+                                        </li>
+                                        <% }%>
                     </ul>
                 </nav>
                 <!-- //nav -->
@@ -65,7 +70,7 @@
     <!-- banner -->
     <section class="ab-info-main py-5">
         <div class="container py-3">
-            <h3 class="tittle text-center"><span class="sub-tittle">TÌM TỤI TUI Ở ĐÂU ?</span>XEM Ở DƯỚI NHA</h3>
+            <h3 class="tittle text-center"><span class="sub-tittle"></span>LIÊN HỆ</h3>
             <div class="row contact-main-info mt-5">
                 <div class="col-md-7 contact-right-content">
                     <h4 class="mb-2">Google Map</h4>
